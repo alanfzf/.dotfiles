@@ -1,5 +1,4 @@
 local blink = require("blink-cmp")
-
 local snip = require("luasnip")
 local loader = require("luasnip.loaders.from_vscode")
 

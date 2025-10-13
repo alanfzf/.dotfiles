@@ -1,7 +1,3 @@
-if true then
-  return
-end
-
 local ok, conform = pcall(require, "conform")
 
 if not ok then
@@ -16,7 +12,7 @@ conform.setup({
     javascriptreact = { "prettier" },
     typescript = { "prettier" },
     typescriptreact = { "prettier" },
-    json = { "prettier", "jq" },
+    json = { "prettier", "jq", stop_after_first = true },
     jsonc = { "prettier" },
     scss = { "prettier" },
     css = { "prettier" },

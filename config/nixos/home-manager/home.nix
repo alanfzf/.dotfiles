@@ -48,7 +48,6 @@ in
     kubernetes-helm
     lazygit
     lua-language-server
-    efm-langserver
     neovim
     nerd-fonts.jetbrains-mono
     nixfmt-rfc-style
