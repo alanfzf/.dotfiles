@@ -4,6 +4,10 @@
       "rev": "7381330",
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
+    "alabaster.nvim": {
+      "rev": "b14f452",
+      "src": "https://github.com/p00f/alabaster.nvim"
+    },
     "arrow.nvim": {
       "rev": "6e0f726",
       "src": "https://github.com/otavioschwanck/arrow.nvim"
@@ -21,17 +25,25 @@
       "rev": "4dfc875",
       "src": "https://github.com/NotAShelf/direnv.nvim"
     },
+    "efmls-configs-nvim": {
+      "rev": "9f82d2f",
+      "src": "https://github.com/creativenull/efmls-configs-nvim"
+    },
     "friendly-snippets": {
       "rev": "572f566",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "c0c0926",
+      "rev": "db3ccff",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
       "rev": "1ee5c1f",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "gruvdark.nvim": {
+      "rev": "acc0114",
+      "src": "https://github.com/darianmorat/gruvdark.nvim"
     },
     "kulala.nvim": {
       "rev": "0d50e9c",
@@ -46,7 +58,7 @@
       "src": "https://github.com/Shatur/neovim-ayu"
     },
     "nvim-autopairs": {
-      "rev": "23320e7",
+      "rev": "7a2c97c",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-dap": {
@@ -58,7 +70,7 @@
       "src": "https://github.com/brenoprata10/nvim-highlight-colors"
     },
     "nvim-treesitter": {
-      "rev": "3ab4f2d2",
+      "rev": "0606c7a9",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },

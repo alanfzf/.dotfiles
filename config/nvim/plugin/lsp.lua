@@ -46,40 +46,31 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
+vim.o.formatexpr = "v:lua.vim.lsp.formatexpr()"
+
     -- disable lsp semantic tokens
     client.server_capabilities.semanticTokensProvider = nil
 
     -- references & definitions
-    keymap("gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to declaration")
-    keymap("gd", "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition")
-    keymap("gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation")
-    keymap("gr", "<cmd>lua vim.lsp.buf.references()<CR>", "References")
+    keymap("gD", vim.lsp.buf.declaration, "Go to declaration")
+    keymap("gd", vim.lsp.buf.definition, "Go to definition")
+    keymap("gI", vim.lsp.buf.implementation, "Implementation")
+    keymap("gr", vim.lsp.buf.references, "References")
     -- documentation
-    keymap("<S-k>", "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover")
-    keymap("<M-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature help")
+    keymap("<S-k>", vim.lsp.buf.hover, "Hover")
+    keymap("<M-k>", vim.lsp.buf.signature_help, "Signature help")
     -- actions
-    keymap("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename definition")
-    keymap("<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code action")
+    keymap("<leader>rn", vim.lsp.buf.rename, "Rename definition")
+    keymap("<leader>la", vim.lsp.buf.code_action, "Code action")
     -- diagnostics
-    keymap("<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", "Loc list")
-    keymap("gl", "<cmd>lua vim.diagnostic.open_float()<CR>", "Diagnostics")
+    keymap("<leader>lq", vim.diagnostic.setloclist, "Loc list")
+    keymap("gl", vim.diagnostic.open_float, "Diagnostics")
 
     -- copilot specific code handling
     if client:supports_method(vim.lsp.protocol.Methods.textDocument_inlineCompletion, bufnr) then
       vim.lsp.inline_completion.enable(true, { bufnr = bufnr })
-
-      vim.keymap.set(
-        "i",
-        "<A-o>",
-        vim.lsp.inline_completion.get,
-        { desc = "LSP: accept inline completion", buffer = bufnr }
-      )
-      vim.keymap.set(
-        "i",
-        "<C-G>",
-        vim.lsp.inline_completion.select,
-        { desc = "LSP: switch inline completion", buffer = bufnr }
-      )
+      keymap("<A-o>", vim.lsp.inline_completion.get, "LSP: accept inline completion", "i")
+      keymap("<C-G>", vim.lsp.inline_completion.select, "LSP: switch inline completion", "i")
     end
   end,
 })

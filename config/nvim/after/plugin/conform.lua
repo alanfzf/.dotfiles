@@ -1,3 +1,7 @@
+if true then
+  return
+end
+
 local ok, conform = pcall(require, "conform")
 
 if not ok then

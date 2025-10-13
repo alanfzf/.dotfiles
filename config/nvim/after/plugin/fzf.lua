@@ -36,7 +36,7 @@ fzf.setup({
   },
   zoxide = {
     scope = "tab",
-    git_root = false,
+    git_root = true,
     -- actions = { enter = actions.cd },
   },
   -- git start
