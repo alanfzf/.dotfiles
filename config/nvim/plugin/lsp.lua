@@ -46,8 +46,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
-vim.o.formatexpr = "v:lua.vim.lsp.formatexpr()"
-
     -- disable lsp semantic tokens
     client.server_capabilities.semanticTokensProvider = nil
 
