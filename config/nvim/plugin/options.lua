@@ -1,7 +1,7 @@
-local function paste()
+local function paste(type)
   return {
-    vim.fn.split(vim.fn.getreg(""), "\n"),
-    vim.fn.getregtype(""),
+    vim.fn.split(vim.fn.getreg(type), "\n"),
+    vim.fn.getregtype(type),
   }
 end
 
@@ -12,15 +12,15 @@ vim.g.clipboard = {
     ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
   },
   paste = {
-    ["+"] = paste,
-    ["*"] = paste,
+    ["+"] = paste("+"),
+    ["*"] = paste("*"),
   },
 }
 
 -- *Global configs*
 --general
 vim.opt.clipboard = "unnamedplus"
-vim.opt.completeopt = { "menu", "menuone", "noinsert", "noselect" }
+vim.opt.completeopt = { "fuzzy","menu", "menuone", "noinsert", "noselect" }
 vim.opt.laststatus = 3
 vim.opt.mouse = ""
 vim.opt.winborder = "rounded"
