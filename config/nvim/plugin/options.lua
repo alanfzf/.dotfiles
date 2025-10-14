@@ -1,3 +1,5 @@
+require("vim._extui").enable({})
+
 local function paste(type)
   return {
     vim.fn.split(vim.fn.getreg(type), "\n"),
@@ -103,5 +105,3 @@ vim.opt.diffopt = {
   "algorithm:patience",
   "indent-heuristic",
 }
-
-require("vim._extui").enable({})

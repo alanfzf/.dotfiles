@@ -53,7 +53,7 @@
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            ./home-manager/home.nix
+            ./nixos/home-manager/home.nix
           ];
           extraSpecialArgs = {
             homeUser = user;
@@ -73,7 +73,7 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system pkgs;
-          modules = [ ./nix/configuration.nix ];
+          modules = [ ./nixos/nix/configuration.nix ];
           specialArgs = {
             inherit inputs user;
           };
@@ -81,7 +81,7 @@
 
         wpc = nixpkgs.lib.nixosSystem {
           inherit system pkgs;
-          modules = [ ./wsl/configuration.nix ];
+          modules = [ ./nixos/wsl/configuration.nix ];
           specialArgs = {
             inherit inputs user;
           };
@@ -93,7 +93,7 @@
         "mb-pro-m3" = nix-darwin.lib.darwinSystem {
           system = aarchSystem;
           pkgs = aarchPkgs;
-          modules = [ ./darwin/darwin.nix ];
+          modules = [ ./nixos/darwin/darwin.nix ];
           specialArgs = { inherit inputs user; };
         };
       };
