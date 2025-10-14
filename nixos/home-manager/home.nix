@@ -24,7 +24,7 @@ in
   home.shellAliases = {
     vi = "nvim";
     vif = "fzf --preview 'bat {}' | xargs -r nvim";
-    ls = "eza -l --icons -s extension";
+    ls = "eza -l --icons -s name --group-directories-first";
     cat = "bat";
     lg = "lazygit";
     k = "kubectl";
