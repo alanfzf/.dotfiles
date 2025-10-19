@@ -18,9 +18,6 @@ vim.api.nvim_create_autocmd("FileType", {
 -- autotag
 require("nvim-ts-autotag").setup({})
 
--- ts objects
-require("nvim-treesitter-textobjects").setup({})
-
 -- ts context comment string
 require("ts_context_commentstring").setup({
   enable_autocmd = false,

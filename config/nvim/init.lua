@@ -12,7 +12,6 @@ vim.pack.add({
   "https://github.com/lewis6991/gitsigns.nvim",
   -- treesitter
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects", version = "main" },
   "https://github.com/JoosepAlviste/nvim-ts-context-commentstring",
   "https://github.com/windwp/nvim-ts-autotag",
   "https://github.com/windwp/nvim-autopairs",
@@ -32,4 +31,5 @@ vim.pack.add({
   "https://github.com/alanfzf/onedark.nvim",
   "https://github.com/rktjmp/lush.nvim",
   "https://github.com/darianmorat/gruvdark.nvim",
+  "https://github.com/lucasadelino/conifer.nvim",
 })
