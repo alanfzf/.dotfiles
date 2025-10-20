@@ -1,9 +1,9 @@
 require("vim._extui").enable({})
 
-local function paste(type)
+local function paste()
   return {
-    vim.fn.split(vim.fn.getreg(type), "\n"),
-    vim.fn.getregtype(type),
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
   }
 end
 
@@ -14,8 +14,8 @@ vim.g.clipboard = {
     ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
   },
   paste = {
-    ["+"] = paste("+"),
-    ["*"] = paste("*"),
+    ["+"] = paste,
+    ["*"] = paste,
   },
 }
 
