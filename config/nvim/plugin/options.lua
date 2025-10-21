@@ -1,5 +1,7 @@
 require("vim._extui").enable({})
 
+vim.cmd([[packadd nvim.difftool]])
+
 local function paste()
   return {
     vim.fn.split(vim.fn.getreg(""), "\n"),

@@ -21,7 +21,7 @@ conform.setup({
     blade = { "blade-formatter" },
     yaml = { lsp_format = "fallback" },
     helm = { lsp_format = "fallback" },
-    ["_"] = { "trim_whitespace", "trim_newlines" },
+    ["*"] = { "trim_whitespace", "trim_newlines" },
   },
   format_after_save = {
     lsp_fallback = false,
