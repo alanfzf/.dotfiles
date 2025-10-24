@@ -33,4 +33,4 @@ vim.pack.add({
   "https://github.com/rktjmp/lush.nvim",
   "https://github.com/darianmorat/gruvdark.nvim",
   "https://github.com/lucasadelino/conifer.nvim",
-})
+}, { confirm = false })
