@@ -1,13 +1,15 @@
 { config, pkgs, ... }:
 {
+  environment.localBinInPath = true;
   environment.systemPackages = with pkgs; [
+    dbeaver-bin
     foot
+    gcolor3
     grim
     jetbrains.datagrip
     libnotify
     mako
-    mysql-client
-    openvpn
+    onlyoffice-desktopeditors
     playerctl
     rofi
     slurp
@@ -15,6 +17,7 @@
     waypaper
     wdisplays
     wl-clipboard
+    mariadb.client
   ];
 
   programs.sway = {
