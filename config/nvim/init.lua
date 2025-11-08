@@ -27,7 +27,4 @@ vim.pack.add({
   -- file navigation
   "https://github.com/stevearc/oil.nvim",
   "https://github.com/ibhagwan/fzf-lua",
-  -- colorschemes
-  "https://github.com/Shatur/neovim-ayu",
-  "https://github.com/lucasadelino/conifer.nvim",
 }, { confirm = false })
