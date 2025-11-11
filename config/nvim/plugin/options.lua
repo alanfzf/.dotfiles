@@ -99,11 +99,3 @@ vim.opt.wildignore:append({
   "zaibatsu.vim",
   "zellner.vim",
 })
-
-vim.opt.diffopt = {
-  "internal",
-  "filler",
-  "closeoff",
-  "algorithm:patience",
-  "indent-heuristic",
-}
