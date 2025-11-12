@@ -4,12 +4,10 @@
   environment.systemPackages = with pkgs; [
     dbeaver-bin
     foot
-    gcolor3
     grim
     jetbrains.datagrip
     libnotify
     mako
-    onlyoffice-desktopeditors
     playerctl
     rofi
     slurp
