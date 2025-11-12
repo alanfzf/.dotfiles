@@ -4,3 +4,4 @@ elpa/
 bookmarks
 custom.el
 tree-sitter/
+*.elc
