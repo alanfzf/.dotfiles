@@ -35,6 +35,7 @@ in
     ssm-session-manager-plugin
     bat
     copilot-language-server
+    github-copilot-cli
     dconf
     eza
     fd
