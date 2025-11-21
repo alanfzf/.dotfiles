@@ -99,9 +99,6 @@ in
     ".config/swaylock".source = config.lib.file.mkOutOfStoreSymlink (
       config.home.homeDirectory + "/.dotfiles/config/swaylock"
     );
-    ".config/latexmk".source = config.lib.file.mkOutOfStoreSymlink (
-      config.home.homeDirectory + "/.dotfiles/config/latexmk"
-    );
   };
 
   programs.home-manager = {
