@@ -99,6 +99,9 @@ in
     ".config/swaylock".source = config.lib.file.mkOutOfStoreSymlink (
       config.home.homeDirectory + "/.dotfiles/config/swaylock"
     );
+    ".config/zathura".source = config.lib.file.mkOutOfStoreSymlink (
+      config.home.homeDirectory + "/.dotfiles/config/zathura"
+    );
   };
 
   programs.home-manager = {

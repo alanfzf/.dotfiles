@@ -100,5 +100,14 @@ return {
         cmd.fn(client, bufnr)
       end, { desc = cmd.desc })
     end
+
+    vim.keymap.set("n", "<leader>lb", "<CMD>LspTexlabBuild<CR>", { buffer = bufnr, desc = "LSP: Texlab Build" })
+    vim.keymap.set("n", "<leader>lf", "<CMD>LspTexlabForward<CR>", { buffer = bufnr, desc = "LSP: Texlab Forward" })
+    vim.keymap.set(
+      "n",
+      "<leader>lc",
+      "<CMD>LspTexlabCleanBuild<CR>",
+      { buffer = bufnr, desc = "LSP: Texlab Cancel Build" }
+    )
   end,
 }
