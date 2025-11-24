@@ -1,10 +1,12 @@
 # GENERAL SETTINGS
-set window-title-basename true
+set window-title-basename false
 set statusbar-home-tilde  true
-set recolor               true
 set selection-clipboard   clipboard
 
 # LAYOUT SETTINGS
 set statusbar-h-padding 0
 set statusbar-v-padding 0
 set show-scrollbars     false
+
+# COLOR SETTINGS
+set highlight-transparency 1
