@@ -1,0 +1,212 @@
+# vim ft: yaml
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    # winget files
+    - resource: 'Microsoft.WinGet.DSC/WinGetPackage'
+      id: 7zip
+      settings:
+        id: 7zip.7zip
+        source: winget
+        ensure: Present
+    - resource: 'Microsoft.WinGet.DSC/WinGetPackage'
+      id: Discord
+      settings:
+        id: Discord.Discord
+        source: winget
+        ensure: Present
+    - resource: 'Microsoft.WinGet.DSC/WinGetPackage'
+      id: VLC
+      settings:
+        id: VideoLAN.VLC
+        source: winget
+        ensure: Present
+    - resource: 'Microsoft.WinGet.DSC/WinGetPackage'
+      id: PowerToys
+      settings:
+        id: Microsoft.PowerToys
+        source: winget
+        ensure: Present
+    - resource: 'Microsoft.WinGet.DSC/WinGetPackage'
+      id: WindowsTerminal
+      settings:
+        id: Microsoft.WindowsTerminal
+        source: winget
+        ensure: Present
+
+    # ********* REGISTRY *********
+    - resource: PSDscResources/Registry
+      id: EnableOldContextMenu
+      directives:
+        description: "Enable old Windows context menu (registry tweak)"
+        securityContext: elevated
+      settings:
+        Key: 'HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32'
+        Ensure: Present
+        ValueName: ''
+        ValueType: String
+        ValueData: ''
+
+    - resource: PSDscResources/Registry
+      id: SetRealTimeIsUniversal
+      directives:
+        description: "Set RealTimeIsUniversal to use UTC hardware clock"
+        securityContext: elevated
+      settings:
+        Key: 'HKLM:\SYSTEM\CurrentControlSet\Control\TimeZoneInformation'
+        Ensure: Present
+        ValueName: 'RealTimeIsUniversal'
+        ValueType: DWord
+        ValueData: 1
+        Force: true
+
+    # Disable Bing search suggestions
+    - resource: PSDscResources/Registry
+      id: DisableBingSearchSuggestions
+      directives:
+        description: "Disable search box suggestions"
+      settings:
+        Key: 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer'
+        Ensure: Present
+        ValueName: 'DisableSearchBoxSuggestions'
+        ValueType: Dword
+        ValueData: 1
+
+    # Disable multitasking Alt+Tab filter
+    - resource: PSDscResources/Registry
+      id: DisableAltTabFilter
+      directives:
+        description: "Disable MultiTaskingAltTabFilter"
+      settings:
+        Key: 'HKCU:\SOFTWARE\Policies\Microsoft\Windows\Explorer'
+        Ensure: Present
+        ValueName: 'MultiTaskingAltTabFilter'
+        ValueType: Dword
+        ValueData: 4
+
+    # Hide frequent folders
+    - resource: PSDscResources/Registry
+      id: HideFrequentFolders
+      directives:
+        description: "Hide frequent folders"
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer'
+        Ensure: Present
+        ValueName: 'ShowFrequent'
+        ValueType: Dword
+        ValueData: 0
+
+    # Show file extensions
+    - resource: PSDscResources/Registry
+      id: ShowFileExtensions
+      directives:
+        description: "Show file extensions"
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        Ensure: Present
+        ValueName: 'HideFileExt'
+        ValueType: Dword
+        ValueData: 0
+
+    # Enable dark mode (system + apps)
+    - resource: PSDscResources/Registry
+      id: EnableDarkMode_System
+      directives:
+        description: "Enable dark mode (system uses light theme = 0)"
+      settings:
+        Key: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize'
+        Ensure: Present
+        ValueName: 'SystemUsesLightTheme'
+        ValueType: Dword
+        ValueData: 0
+
+    - resource: PSDscResources/Registry
+      id: EnableDarkMode_Apps
+      directives:
+        description: "Enable dark mode (apps use light theme = 0)"
+      settings:
+        Key: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize'
+        Ensure: Present
+        ValueName: 'AppsUseLightTheme'
+        ValueType: Dword
+        ValueData: 0
+
+    # Taskbar tweaks (as many as you can reliably apply)
+    - resource: PSDscResources/Registry
+      id: HideTaskViewButton
+      directives:
+        description: "Remove Task View button from taskbar"
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        Ensure: Present
+        ValueName: 'ShowTaskViewButton'
+        ValueType: Dword
+        ValueData: 0
+
+    - resource: PSDscResources/Registry
+      id: RemoveChatTaskbar
+      directives:
+        description: "Remove Chat from taskbar"
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        Ensure: Present
+        ValueName: 'TaskbarMn'
+        ValueType: Dword
+        ValueData: 0
+
+    - resource: PSDscResources/Registry
+      id: RemoveWidgetsTaskbar
+      directives:
+        description: "Remove Widgets from taskbar"
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
+        Ensure: Present
+        ValueName: 'TaskbarDa'
+        ValueType: Dword
+        ValueData: 0
+
+    - resource: PSDscResources/Registry
+      id: RemoveSearchTaskbar
+      directives:
+        description: "Remove search box from taskbar"
+      settings:
+        Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Search'
+        Ensure: Present
+        ValueName: 'SearchboxTaskbarMode'
+        ValueType: Dword
+        ValueData: 0
+
+    # Date/time format tweak (user locale)
+    - resource: PSDscResources/Registry
+      id: DateFormat
+      directives:
+        description: "Set short date and time format"
+      settings:
+        Key: 'HKCU:\Control Panel\International'
+        Ensure: Present
+        Force: true
+        ValueName: 'sShortDate'
+        ValueType: String
+        ValueData: 'yyyy-MM-dd'
+
+    - resource: PSDscResources/Registry
+      id: TimeFormat
+      directives:
+        description: "Set short time format"
+      settings:
+        Key: 'HKCU:\Control Panel\International'
+        Ensure: Present
+        ValueName: 'sShortTime'
+        ValueType: String
+        ValueData: 'HH:mm'
+
+    # Install alt gr ketboard layout
+    - resource: PSDscResources/MsiPackage
+      id: AltgrKeyboardLayout
+      directives:
+        securityContext: elevated
+      settings:
+        Path: "https://github.com/alanfzf/.dotfiles/releases/download/1.0.0/us-inter_amd64.msi"
+        ProductId: "{88EE7424-9889-4364-BEFC-A2FDC8751BF8}"  # insert real GUID, or empty if unknown
+        Ensure: Present
+        # Arguments: "/qn /norestart"
