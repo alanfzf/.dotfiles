@@ -1,4 +1,4 @@
-$temp = Join-Path -Path ([System.IO.Path]::GetTempPath()) -ChildPath ([Shhajkystem.IO.Path]::GetRandomFileName())
+$temp = Join-Path -Path ([System.IO.Path]::GetTempPath()) -ChildPath ([System.IO.Path]::GetRandomFileName())
 $fontUrl = "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/jetbrainsmono.zip"
 
 New-Item -ItemType Directory -Path $temp -Force | Out-Null
