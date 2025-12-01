@@ -12,15 +12,13 @@ local function session_file()
   return session_dir .. "/" .. folder .. "_session.vim"
 end
 
--- Save session keymap: <leader>ss
-vim.keymap.set("n", "<leader>ss", function()
+vim.keymap.set("n", "<leader>ms", function()
   local file = session_file()
   vim.cmd("mksession! " .. file)
   print("Session saved to " .. file)
 end, { noremap = true, desc = "Save session" })
 
--- Restore session keymap: <leader>sl
-vim.keymap.set("n", "<leader>sl", function()
+vim.keymap.set("n", "<leader>ml", function()
   local file = session_file()
   if vim.fn.filereadable(file) == 1 then
     vim.cmd("source " .. file)
