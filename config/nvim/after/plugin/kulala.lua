@@ -1,4 +1,3 @@
--- kulala
 require("kulala").setup({
   additional_curl_options = { "-L" },
   environment_scope = "b",

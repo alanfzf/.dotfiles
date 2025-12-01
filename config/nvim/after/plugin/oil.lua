@@ -32,23 +32,3 @@ oil.setup({
   -- Set to false to disable all of the above keymaps
   use_default_keymaps = false,
 })
-
--- temporary fix hack?
-vim.api.nvim_create_autocmd("User", {
-  desc = "Close buffers when files are deleted in Oil",
-  pattern = "OilActionsPost",
-  callback = function(args)
-    if args.data.err then
-      return
-    end
-    for _, action in ipairs(args.data.actions) do
-      if action.type == "delete" then
-        local _, path = require("oil.util").parse_url(action.url)
-        local bufnr = vim.fn.bufnr(path)
-        if bufnr ~= -1 then
-          vim.cmd.bwipeout({ bufnr, bang = true })
-        end
-      end
-    end
-  end,
-})
