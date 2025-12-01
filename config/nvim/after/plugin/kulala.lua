@@ -1,0 +1,13 @@
+-- kulala
+require("kulala").setup({
+  additional_curl_options = { "-L" },
+  environment_scope = "b",
+  global_keymaps = true,
+  global_keymaps_prefix = "<leader>h",
+  kulala_keymaps_prefix = "<leader>s",
+  ui = {
+    default_view = "body",
+    winbar = true,
+    show_icons = "signcolumn",
+  },
+})
