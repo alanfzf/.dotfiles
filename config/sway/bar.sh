@@ -23,16 +23,11 @@ while :; do
   weather="$(cat $WEATHER_CACHE)"
 
   echo "[
-    {\"name\":\"arrow1\", \"full_text\":\"\", \"color\":\"#fabd2f\", \"separator\":false, \"separator_block_width\":0},
-    {\"name\":\"weather\", \"full_text\":\" $weather\", \"background\":\"#fabd2f\", \"color\":\"#1d2021\", \"separator\":false, \"separator_block_width\":0},
-    {\"name\":\"arrow2\", \"full_text\":\"\", \"color\":\"#fe8019\", \"background\":\"#fabd2f\", \"separator\":false, \"separator_block_width\":0},
-    {\"name\":\"net\", \"full_text\":\" 󰈀  $net \", \"background\":\"#fe8019\", \"color\":\"#1d2021\", \"separator\":false, \"separator_block_width\":0},
-    {\"name\":\"arrow3\", \"full_text\":\"\", \"color\":\"#fb4934\", \"background\":\"#fe8019\", \"separator\":false, \"separator_block_width\":0},
-    {\"name\":\"mem\", \"full_text\":\"   $mem% \", \"background\":\"#fb4934\", \"color\":\"#1d2021\", \"separator\":false, \"separator_block_width\":0},
-    {\"name\":\"cpu\", \"full_text\":\"   $cpu% \", \"background\":\"#fb4934\", \"color\":\"#1d2021\", \"separator\":false, \"separator_block_width\":0},
-    {\"name\":\"arrow4\", \"full_text\":\"\", \"color\":\"#8ec07c\", \"background\":\"#fb4934\", \"separator\":false, \"separator_block_width\":0},
-    {\"name\":\"clock\", \"full_text\":\" 󰃰  $clock \", \"background\":\"#8ec07c\", \"color\":\"#1d2021\", \"separator\":false, \"separator_block_width\":0},
-    {\"name\":\"arrow5\", \"full_text\":\"\", \"color\":\"#282828\", \"background\":\"#8ec07c\", \"separator\":false, \"separator_block_width\": 5},
+    {\"name\":\"weather\", \"full_text\":\" $weather\" },
+    {\"name\":\"net\", \"full_text\":\" 󰈀  $net \" },
+    {\"name\":\"mem\", \"full_text\":\"   $mem% \"},
+    {\"name\":\"cpu\", \"full_text\":\"   $cpu% \"},
+    {\"name\":\"clock\", \"full_text\":\" 󰃰  $clock \"},
   ],"
   sleep 5
 done
