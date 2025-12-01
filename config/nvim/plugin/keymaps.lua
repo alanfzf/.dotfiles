@@ -21,7 +21,6 @@ keymap("c", "<M-f>", "<S-Right>", { noremap = true })
 keymap("c", "<C-k>", [[<C-\>estrpart(getcmdline(), 0, getcmdpos()-1)<CR>]], { noremap = true })
 
 --[[ * NORMAL MODE *  ]]
-keymap("n", "cc", '"_cc')
 -- fix j,k on virtual lines
 keymap("n", "j", "gj")
 keymap("n", "k", "gk")
