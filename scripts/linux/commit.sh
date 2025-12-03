@@ -40,7 +40,7 @@ Your task is to:
 6. Write exactly 10 different commit proposals
 
 **Instructions**:
-1. Please respond only with the suggested commit messages, with no additional explanations.
+1. Please respond only with the suggested commit messages with no additional explanations or formats like bullet points or numbers.
 2. Structure: <type>(<scope>): <description>
 3. Allowed types:
   - feat: new feature implemented
