@@ -16,6 +16,13 @@ git:
   parseEmoji: true
   overrideGpg: true
 customCommands:
+  - key: "<c-a>"
+    context: "files"
+    description: "Generate AI commit"
+    command: |
+      msg=$(ai-commit)
+      git commit --message "$msg"
+    output: terminal
   # retrieved from: https://github.com/jesseduffield/lazygit/wiki/Custom-Commands-Compendium#conventional-commit
   - key: "<c-v>"
     context: "files"
@@ -58,12 +65,10 @@ customCommands:
           - name: "test"
             description: "Adding missing tests or correcting existing tests"
             value: "test"
-
       - type: "input"
         title: "Scope"
         key: "Scope"
         initialValue: ""
-
       - type: "menu"
         key: "Breaking"
         title: "Breaking change"
@@ -72,11 +77,9 @@ customCommands:
             value: ""
           - name: "yes"
             value: "!"
-
       - type: "input"
         title: "message"
         key: "Message"
         initialValue: ""
-
     command: "git commit --message \"{{.Form.Type}}{{ if .Form.Scope }}({{ .Form.Scope }}){{ end }}{{.Form.Breaking}}: {{.Form.Message}}\""
     loadingText: "Creating conventional commit..."
