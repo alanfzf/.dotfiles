@@ -19,9 +19,7 @@ customCommands:
   - key: "<c-a>"
     context: "files"
     description: "Generate AI commit"
-    command: |
-      msg=$(ai-commit)
-      git commit --message "$msg"
+    command: ai-commit
     output: terminal
   # retrieved from: https://github.com/jesseduffield/lazygit/wiki/Custom-Commands-Compendium#conventional-commit
   - key: "<c-v>"
