@@ -108,3 +108,5 @@ fzf.setup({
     ["--header"] = " ",
   },
 })
+
+fzf.register_ui_select()

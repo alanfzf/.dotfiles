@@ -57,6 +57,11 @@ in
     tree-sitter
     unzip
     zip
+    (writeShellApplication {
+      name = "ai-commit";
+      runtimeInputs = [ ];
+      text = builtins.readFile (config.home.homeDirectory + "/.dotfiles/scripts/linux/commit.sh");
+    })
   ];
 
   home.file = {
