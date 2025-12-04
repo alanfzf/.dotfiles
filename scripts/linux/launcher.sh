@@ -1,6 +1,6 @@
 dirs="${XDG_DATA_DIRS}"
 extra="$HOME/.local/bin"
-term="foot /e"
+term="foot -e"
 
 cmd=$(
 {
@@ -16,7 +16,7 @@ cmd=$(
 
         if [ -n "$name" ] && [ -n "$exec" ]; then
             if [ "$terminal" = "true" ]; then
-                printf "%s\t%s %s\n" "$name" "$term" "$exec"
+                printf "%s\t%s %s\n" "$name" "$term $exec"
             else
                 printf "%s\t%s\n" "$name" "$exec"
             fi
