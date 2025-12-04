@@ -144,3 +144,4 @@ bar {
 
 include ~/.screens.conf
 include /etc/sway/config.d/*
+include ~/.config/sway/windows.conf
