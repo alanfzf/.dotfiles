@@ -1,12 +1,13 @@
 dirs="${XDG_DATA_DIRS}"
 extra="$HOME/.local/bin"
 term="foot -e"
+paths="${dirs//:/ }"
 
 cmd=$(
 {
     # Desktop entries
-    printf '%s\n' ${dirs//:/ } | while read -r d; do
-        find -L "$d/applications" -type f -name '*.desktop' 2>/dev/null
+    for p in $paths; do
+      find -L "$p/applications" -type f -name '*.desktop' 2>/dev/null
     done | while read -r f; do
         name=$(grep -m1 '^Name=' "$f" | cut -d= -f2-)
         # Raw Exec (without % arguments)
@@ -16,7 +17,7 @@ cmd=$(
 
         if [ -n "$name" ] && [ -n "$exec" ]; then
             if [ "$terminal" = "true" ]; then
-                printf "%s\t%s %s\n" "$name" "$term $exec"
+                printf "%s\t%s\n" "$name" "$term $exec"
             else
                 printf "%s\t%s\n" "$name" "$exec"
             fi

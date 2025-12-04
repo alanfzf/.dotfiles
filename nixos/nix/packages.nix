@@ -9,7 +9,6 @@
     libnotify
     mako
     playerctl
-    rofi
     slurp
     swaybg
     waypaper

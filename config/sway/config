@@ -2,7 +2,8 @@
 set $mod Mod4
 set $term foot
 set $browser firefox
-set $menu dmenu_path | rofi -show drun | xargs swaymsg exec --
+set $kill_menu swaymsg '[app_id="app_launcher"] kill'
+set $menu $term -a=app_launcher -e launcher
 set $left h
 set $down j
 set $up k
@@ -56,7 +57,7 @@ input type:pointer {
 }
 
 # ****** [BINDINGS] ******
-bindsym $mod+space exec $menu
+bindsym $mod+space exec $kill_menu; exec $menu
 bindsym $mod+w kill
 bindsym $mod+e exec thunar
 bindsym $mod+b exec $browser

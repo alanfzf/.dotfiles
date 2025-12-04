@@ -60,7 +60,12 @@ in
     (writeShellApplication {
       name = "ai-commit";
       runtimeInputs = [ ];
-      text = builtins.readFile (config.home.homeDirectory + "/.dotfiles/scripts/linux/commit.sh");
+      text = builtins.readFile ../../scripts/linux/commit.sh;
+    })
+    (writeShellApplication {
+      name = "launcher";
+      runtimeInputs = [ ];
+      text = builtins.readFile ../../scripts/linux/launcher.sh;
     })
   ];
 
