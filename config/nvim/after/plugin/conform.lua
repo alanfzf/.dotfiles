@@ -19,7 +19,7 @@ conform.setup({
     lua = { "stylua" },
     php = { "php_cs_fixer" },
     blade = { "blade-formatter" },
-    yaml = { lsp_format = "fallback" },
+    yaml = { "prettier" },
     helm = { lsp_format = "fallback" },
     tex = { "tex-fmt" },
     bib = { "tex-fmt" },
