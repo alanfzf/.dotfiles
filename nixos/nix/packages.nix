@@ -15,6 +15,7 @@
     wdisplays
     wl-clipboard
     mariadb.client
+    libreoffice
   ];
 
   programs.sway = {
