@@ -23,6 +23,8 @@ conform.setup({
     helm = { lsp_format = "fallback" },
     tex = { "tex-fmt" },
     bib = { "tex-fmt" },
+    sh = { "shfmt" },
+    xml = { "xmlstarlet" },
     ["*"] = { "trim_whitespace", "trim_newlines" },
   },
   format_after_save = {
