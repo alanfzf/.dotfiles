@@ -14,8 +14,8 @@
     waypaper
     wdisplays
     wl-clipboard
-    mariadb.client
     libreoffice
+    scrcpy
   ];
 
   programs.sway = {
