@@ -2,7 +2,6 @@
 {
   environment.localBinInPath = true;
   environment.systemPackages = with pkgs; [
-    dbeaver-bin
     foot
     grim
     jetbrains.datagrip
@@ -14,7 +13,6 @@
     waypaper
     wdisplays
     wl-clipboard
-    libreoffice
     scrcpy
   ];
 

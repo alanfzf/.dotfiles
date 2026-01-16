@@ -51,7 +51,7 @@ in
     lua-language-server
     neovim
     nerd-fonts.jetbrains-mono
-    nixfmt-rfc-style
+    nixfmt
     stylua
     tmux
     tree-sitter
@@ -218,15 +218,7 @@ in
         identityFile = "~/.ssh/Corposistemas.pem";
         port = 2222;
       };
-      "old-corpo" = {
-        hostname = "172.31.89.33";
-        user = "ubuntu";
-        identityFile = "~/.ssh/Corposistemas.pem";
-      };
     };
-    extraConfig = ''
-      Include ~/.ssh/devpod
-    '';
   };
 
   dconf.settings = {
