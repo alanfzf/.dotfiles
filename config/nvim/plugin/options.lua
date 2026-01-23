@@ -59,7 +59,7 @@ vim.opt.termguicolors = true
 vim.opt.pumheight = 10
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 2
 -- misc
 vim.opt.shortmess:append("cOt")
 vim.opt.linebreak = true
