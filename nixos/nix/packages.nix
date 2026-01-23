@@ -2,6 +2,7 @@
 {
   environment.localBinInPath = true;
   environment.systemPackages = with pkgs; [
+    chromium
     foot
     grim
     jetbrains.datagrip
@@ -14,6 +15,7 @@
     wdisplays
     wl-clipboard
     scrcpy
+    dbeaver-bin
   ];
 
   programs.sway = {
