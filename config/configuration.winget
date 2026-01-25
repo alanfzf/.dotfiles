@@ -104,6 +104,7 @@ properties:
       settings:
         Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced'
         Ensure: Present
+        Force: true
         ValueName: 'HideFileExt'
         ValueType: Dword
         ValueData: 0
@@ -116,6 +117,7 @@ properties:
       settings:
         Key: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize'
         Ensure: Present
+        Force: true
         ValueName: 'SystemUsesLightTheme'
         ValueType: Dword
         ValueData: 0
@@ -127,6 +129,7 @@ properties:
       settings:
         Key: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize'
         Ensure: Present
+        Force: true
         ValueName: 'AppsUseLightTheme'
         ValueType: Dword
         ValueData: 0
@@ -172,6 +175,7 @@ properties:
       settings:
         Key: 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Search'
         Ensure: Present
+        Force: true
         ValueName: 'SearchboxTaskbarMode'
         ValueType: Dword
         ValueData: 0
@@ -196,17 +200,7 @@ properties:
       settings:
         Key: 'HKCU:\Control Panel\International'
         Ensure: Present
+        Force: true
         ValueName: 'sShortTime'
         ValueType: String
         ValueData: 'HH:mm'
-
-    # Install alt gr ketboard layout
-    - resource: PSDscResources/MsiPackage
-      id: AltgrKeyboardLayout
-      directives:
-        securityContext: elevated
-      settings:
-        Path: "https://github.com/alanfzf/.dotfiles/releases/download/1.0.0/us-inter_amd64.msi"
-        ProductId: "{88EE7424-9889-4364-BEFC-A2FDC8751BF8}"  # insert real GUID, or empty if unknown
-        Ensure: Present
-        # Arguments: "/qn /norestart"
