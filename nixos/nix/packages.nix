@@ -14,8 +14,10 @@
     waypaper
     wdisplays
     wl-clipboard
-    scrcpy
     dbeaver-bin
+    # android development
+    scrcpy
+    android-studio
   ];
 
   programs.sway = {

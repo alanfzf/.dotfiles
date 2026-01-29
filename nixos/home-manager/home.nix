@@ -57,15 +57,16 @@ in
     tree-sitter
     unzip
     zip
-    (writeShellApplication {
-      name = "ai-commit";
-      runtimeInputs = [ ];
-      text = builtins.readFile ../../scripts/linux/commit.sh;
-    })
+    xmlstarlet
     (writeShellApplication {
       name = "launcher";
       runtimeInputs = [ ];
       text = builtins.readFile ../../scripts/linux/launcher.sh;
+    })
+    (writeShellApplication {
+      name = "html-render";
+      runtimeInputs = [ ];
+      text = builtins.readFile ../../scripts/linux/html-render.sh;
     })
   ];
 
