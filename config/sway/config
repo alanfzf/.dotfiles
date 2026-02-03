@@ -1,7 +1,7 @@
 # ** [VARIABLES] **
 set $mod Mod4
 set $term foot
-set $browser firefox
+set $browser firefox-devedition
 set $kill_menu swaymsg '[app_id="app_launcher"] kill'
 set $menu $term -a=app_launcher -e launcher
 set $left h
