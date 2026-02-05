@@ -24,7 +24,9 @@ vim.g.clipboard = {
 -- *Global configs*
 --general
 vim.opt.clipboard = "unnamedplus"
-vim.opt.completeopt = { "fuzzy", "menu", "menuone", "noinsert", "noselect" }
+vim.opt.complete = ".,b,o,F"
+vim.opt.completeopt = { "fuzzy", "menu", "menuone", "noinsert", "noselect", "popup" }
+vim.opt.autocomplete = true
 vim.opt.laststatus = 3
 vim.opt.mouse = ""
 vim.opt.winborder = "rounded"

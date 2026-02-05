@@ -2,6 +2,8 @@
 {
   environment.localBinInPath = true;
   environment.systemPackages = with pkgs; [
+    libreoffice
+    mariadb
     chromium
     foot
     grim

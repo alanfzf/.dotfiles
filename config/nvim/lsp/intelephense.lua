@@ -10,7 +10,7 @@ return {
     intelephense = {
       files = {
         maxSize = 1000000,
-        exclude = { "**/.direnv/**" },
+        exclude = { "**/.direnv/**", "**/node_modules/**" },
       },
     },
   },

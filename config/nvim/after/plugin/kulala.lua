@@ -1,4 +1,5 @@
 require("kulala").setup({
+  lsp = { enable = false },
   additional_curl_options = { "-L" },
   environment_scope = "b",
   global_keymaps = true,
