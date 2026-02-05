@@ -70,5 +70,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
       keymap("<A-o>", vim.lsp.inline_completion.get, "LSP: accept inline completion", "i")
       keymap("<C-G>", vim.lsp.inline_completion.select, "LSP: switch inline completion", "i")
     end
+
+    -- "textDocument/completion"
+    if client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
+      vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+    end
   end,
 })
