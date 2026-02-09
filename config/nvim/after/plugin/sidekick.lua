@@ -2,6 +2,10 @@ require("sidekick").setup({
   nes = { enabled = false },
   cli = {
     picker = "fzf-lua",
+    mux = {
+      backend = "tmux",
+      enabled = true,
+    },
   },
 })
 
