@@ -58,6 +58,7 @@ in
     unzip
     zip
     xmlstarlet
+    lsof
     (writeShellApplication {
       name = "launcher";
       runtimeInputs = [ ];
