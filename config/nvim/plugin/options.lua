@@ -59,6 +59,7 @@ vim.opt.numberwidth = 4
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.pumheight = 10
+vim.opt.pummaxwidth = 60
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.cmdheight = 2
