@@ -29,7 +29,7 @@ keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
 -- Go to specific directories
 keymap("n", "<leader>c", "<CMD>tabnew $MYVIMRC<CR><cmd>tcd %:p:h<CR>")
-keymap("n", "<leader>n", "<CMD>tabnew ~/dropbox/Apps/Metanote/README.org<CR><CMD>tcd %:p:h<CR>")
+keymap("n", "<leader>n", "<CMD>tabnew ~/dropbox/Apps/Metanote<CR><CMD>tcd %:p:h<CR>")
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>")
 -- Better window navigation
