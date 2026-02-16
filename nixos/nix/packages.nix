@@ -20,6 +20,7 @@
     # android development
     scrcpy
     android-studio
+    android-tools
   ];
 
   programs.sway = {
