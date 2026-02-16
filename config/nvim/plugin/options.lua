@@ -41,11 +41,13 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 -- tab related
 vim.opt.smarttab = true
-vim.opt.shiftround = true
-vim.opt.shiftwidth = 0
 vim.opt.tabstop = 4
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = -1 -- negative means just use shiftwidth
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+
 -- visual
 vim.opt.jumpoptions = "stack,view"
 vim.opt.splitkeep = "screen"
