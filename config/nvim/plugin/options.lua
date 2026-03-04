@@ -24,7 +24,7 @@ vim.g.clipboard = {
 -- *Global configs*
 --general
 vim.opt.clipboard = "unnamedplus"
-vim.opt.complete = ".,b,o"
+vim.opt.complete = "o^10,.^5,b^5"
 vim.opt.completeopt = { "fuzzy", "menu", "menuone", "noinsert", "noselect", "popup" }
 vim.opt.autocomplete = true
 vim.opt.laststatus = 3
