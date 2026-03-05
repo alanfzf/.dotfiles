@@ -1,11 +1,11 @@
 (setq treesit-language-source-alist
       '(
-	;; required grammars for php
-	(jsdoc       "https://github.com/tree-sitter/tree-sitter-jsdoc" nil "src")
-	(phpdoc      "https://github.com/claytonrcarter/tree-sitter-phpdoc"  nil      "src")
-	(php         "https://github.com/tree-sitter/tree-sitter-php"        nil      "php/src")
-	;; other grammars
-	(bash        "https://github.com/tree-sitter/tree-sitter-bash"       nil      "src")
+        ;; required grammars for php
+        (jsdoc       "https://github.com/tree-sitter/tree-sitter-jsdoc" nil "src")
+        (phpdoc      "https://github.com/claytonrcarter/tree-sitter-phpdoc"  nil      "src")
+        (php         "https://github.com/tree-sitter/tree-sitter-php"        nil      "php/src")
+        ;; other grammars
+        (bash        "https://github.com/tree-sitter/tree-sitter-bash"       nil      "src")
         (c           "https://github.com/tree-sitter/tree-sitter-c"          nil      "src")
         (cpp         "https://github.com/tree-sitter/tree-sitter-cpp"        nil      "src")
         (css         "https://github.com/tree-sitter/tree-sitter-css"        nil      "src")
@@ -36,7 +36,7 @@
 (require 'treesit)
 (setq major-mode-remap-alist
       '(
-	(c-mode          . c-ts-mode)
+        (c-mode          . c-ts-mode)
         (c++-mode        . c++-ts-mode)
         (c-or-c++-mode   . c-or-c++-ts-mode)
         (conf-toml-mode  . toml-ts-mode)
@@ -53,5 +53,5 @@
       )
 
 (add-to-list 'auto-mode-alist
-'("\\.php\\'" . php-ts-mode)
-)
+             '("\\.php\\'" . php-ts-mode)
+             )

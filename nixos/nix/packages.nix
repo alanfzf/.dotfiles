@@ -3,7 +3,6 @@
   environment.localBinInPath = true;
   environment.systemPackages = with pkgs; [
     libreoffice
-    mariadb
     chromium
     foot
     grim
@@ -12,6 +11,7 @@
     mako
     playerctl
     slurp
+    pavucontrol
     swaybg
     waypaper
     wdisplays
