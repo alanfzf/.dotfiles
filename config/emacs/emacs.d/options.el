@@ -11,8 +11,8 @@
 (setq display-line-numbers-type 'relative)
 (setq inhibit-startup-screen t)
 (set-face-attribute 'default nil
-		    :font "JetBrainsMono Nerd Font"
-		    :height 140)
+        :font "JetBrainsMono Nerd Font"
+        :height 140)
 
 ;; disable autosave
 (setq backup-inhibited t

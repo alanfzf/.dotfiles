@@ -34,7 +34,7 @@
     rbc = !git add -A && git rebase --continue
     rba = rebase --abort
     mt = mergetool
-    gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
+    gone = !git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
 [diff]
     tool = nvim_difftool
 [difftool "nvim_difftool"]

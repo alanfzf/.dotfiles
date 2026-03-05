@@ -30,4 +30,6 @@ vim.pack.add({
   "https://github.com/2962fe22-10b3-43f8-8a33-252bd4b7435a/prasiolite",
   -- ai
   "https://github.com/folke/sidekick.nvim",
+  -- database
+  "https://github.com/tpope/vim-dadbod",
 }, { confirm = false })
