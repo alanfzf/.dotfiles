@@ -215,11 +215,18 @@ in
         identityFile = "~/.ssh/id_ed25519.pub";
       };
       "corpo" = {
-        hostname = "localhost";
+        hostname = "i-0bac6612747aab708";
         user = "ubuntu";
         identityFile = "~/.ssh/Corposistemas.pem";
-        port = 2222;
+        port = 22;
+        proxyCommand = "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p";
       };
+      # "corpo" = {
+      #   hostname = "localhost";
+      #   user = "ubuntu";
+      #   identityFile = "~/.ssh/Corposistemas.pem";
+      #   port = 2222;
+      # };
     };
   };
 
