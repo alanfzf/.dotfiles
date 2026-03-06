@@ -32,4 +32,5 @@ vim.pack.add({
   "https://github.com/folke/sidekick.nvim",
   -- database
   "https://github.com/tpope/vim-dadbod",
+  "https://github.com/kristijanhusak/vim-dadbod-ui",
 }, { confirm = false })

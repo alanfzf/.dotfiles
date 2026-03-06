@@ -3,24 +3,23 @@
   environment.localBinInPath = true;
   environment.systemPackages = with pkgs; [
     libreoffice
-    chromium
     foot
     grim
-    jetbrains.datagrip
     libnotify
     mako
     playerctl
     slurp
-    pavucontrol
     swaybg
     waypaper
     wdisplays
     wl-clipboard
-    dbeaver-bin
     # android development
     scrcpy
     android-studio
     android-tools
+    # database
+    jetbrains.datagrip
+    mariadb.client
   ];
 
   programs.sway = {
