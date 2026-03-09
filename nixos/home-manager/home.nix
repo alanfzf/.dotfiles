@@ -219,14 +219,8 @@ in
         user = "ubuntu";
         identityFile = "~/.ssh/Corposistemas.pem";
         port = 22;
-        proxyCommand = "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p";
+        proxyCommand = "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p --profile dev-corpo";
       };
-      # "corpo" = {
-      #   hostname = "localhost";
-      #   user = "ubuntu";
-      #   identityFile = "~/.ssh/Corposistemas.pem";
-      #   port = 2222;
-      # };
     };
   };
 
