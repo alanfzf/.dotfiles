@@ -1,41 +1,46 @@
 # vim: ft=gitconfig
 [user]
-    name = alanfzf
-    email = 29936954+alanfzf@users.noreply.github.com
-    signingkey = ~/.ssh/id_ed25519.pub
+  name = alanfzf
+  email = 29936954+alanfzf@users.noreply.github.com
+  signingkey = ~/.ssh/id_ed25519.pub
 [commit]
-    gpgsign = true
+  gpgsign = true
 [gpg]
-    format = ssh
+  format = ssh
 [push]
-    autoSetupRemote = true
+  autoSetupRemote = true
 [core]
-    editor = nvim
-    autocrlf = false
-    pager = cat
+  editor = nvim
+  autocrlf = false
+  pager = cat
 [init]
-    defaultBranch = main
+  defaultBranch = main
 [pull]
-    rebase = true
+  rebase = true
+[merge]
+	tool = nvimdiff
 [mergetool]
-    keepBackup = false
-[alias]
-    subup = submodule update --init --recursive
-    co = checkout
-    cob = checkout -b
-    br = branch
-    st = status
-    cm = commit -m
-    amend = commit --amend -m
-    po = push origin
-    cp = cherry-pick
-    dfc = diff --check
-    rmcache = rm -rf --cached .
-    rbc = !git add -A && git rebase --continue
-    rba = rebase --abort
-    mt = mergetool
-    gone = !git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
+  keepBackup = false
+  prompt = false
+[mergetool "nvimdiff"]
+  layout = "LOCAL,REMOTE / MERGED"
 [diff]
-    tool = nvim_difftool
+  tool = nvim_difftool
 [difftool "nvim_difftool"]
-    cmd = nvim -c \"packadd nvim.difftool\" -c \"DiffTool $LOCAL $REMOTE\"
+  cmd = nvim -d "$LOCAL" "$REMOTE"
+[alias]
+  subup = submodule update --init --recursive
+  co = checkout
+  cob = checkout -b
+  br = branch
+  st = status
+  cm = commit -m
+  amend = commit --amend -m
+  po = push origin
+  cp = cherry-pick
+  dfc = diff --check
+  rmcache = rm -rf --cached .
+  rbc = !git add -A && git rebase --continue
+  rba = rebase --abort
+  mt = mergetool
+  gone = !git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
