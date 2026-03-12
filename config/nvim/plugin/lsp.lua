@@ -71,9 +71,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
       keymap("<C-G>", vim.lsp.inline_completion.select, "LSP: switch inline completion", "i")
     end
 
-    -- "textDocument/completion"
-    -- if client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
-    --   vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
-    -- end
+    ---@diagnostic disable-next-line: empty-block
+    if client:supports_method(vim.lsp.protocol.Methods.textDocument_foldingRange, bufnr) then
+      -- you can only change fold fields only per window so this is a bit useless
+      -- local win = vim.wo[vim.api.nvim_get_current_win()][0]
+      -- win.foldmethod = "expr"
+      -- win.foldexpr = "v:lua.vim.lsp.foldexpr()"
+      -- win.foldtext = "v:lua.vim.lsp.foldtext()"
+      -- vim.wo.foldlevel = 99
+    end
   end,
 })
