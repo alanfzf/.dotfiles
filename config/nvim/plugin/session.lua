@@ -1,5 +1,5 @@
 -- Directory to store sessions
-local session_dir = vim.fn.expand("~/.nvim_sessions")
+local session_dir = vim.fn.stdpath("state") .. "/sessions"
 
 -- Make sure the session directory exists
 if vim.fn.isdirectory(session_dir) == 0 then

@@ -94,3 +94,10 @@ keymap("n", "<leader>df", "<cmd>windo diffthis<CR>", opts)
 keymap("n", "<leader>do", "<cmd>windo diffoff<CR>", opts)
 -- MACROS
 keymap("n", "<leader>q", "@q<CR>", opts)
+
+vim.keymap.set("i", "<CR>", function()
+  if vim.fn.pumvisible() == 1 then
+    return "<C-e><CR>"
+  end
+  return "<CR>"
+end, { expr = true, replace_keycodes = true })
