@@ -29,11 +29,15 @@ vim.api.nvim_create_autocmd("FileType", {
     end
 
     if vim.treesitter.query.get(lang, "folds") then
-      local win = vim.wo[vim.api.nvim_get_current_win()][0]
-      win.foldmethod = "expr"
-      win.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-      win.foldtext = "v:lua.vim.treesitter.foldtext()"
-      vim.wo.foldlevel = 99
+      for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local winbuf = vim.api.nvim_win_get_buf(win)
+        if winbuf == bufnr then
+          vim.wo[win].foldmethod = "expr"
+          vim.wo[win].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+          vim.wo[win].foldtext = "v:lua.vim.treesitter.foldtext()"
+          vim.wo.foldlevel = 99
+        end
+      end
     end
   end,
 })
