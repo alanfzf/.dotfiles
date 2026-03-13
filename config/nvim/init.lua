@@ -28,6 +28,8 @@ vim.pack.add({
   "https://github.com/ibhagwan/fzf-lua",
   -- colorscheme
   "https://github.com/2962fe22-10b3-43f8-8a33-252bd4b7435a/prasiolite",
+  "https://github.com/ellisonleao/gruvbox.nvim",
+  "https://github.com/0xleodevv/oc-2.nvim",
   -- ai
   "https://github.com/folke/sidekick.nvim",
   -- database
