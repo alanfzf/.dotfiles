@@ -35,7 +35,6 @@ in
     ssm-session-manager-plugin
     bat
     copilot-language-server
-    github-copilot-cli
     dconf
     eza
     fd
@@ -58,16 +57,11 @@ in
     unzip
     zip
     xmlstarlet
-    lsof
+    opencode
     (writeShellApplication {
       name = "launcher";
       runtimeInputs = [ ];
       text = builtins.readFile ../../scripts/linux/launcher.sh;
-    })
-    (writeShellApplication {
-      name = "html-render";
-      runtimeInputs = [ ];
-      text = builtins.readFile ../../scripts/linux/html-render.sh;
     })
   ];
 
