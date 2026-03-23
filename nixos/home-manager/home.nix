@@ -35,6 +35,7 @@ in
     ssm-session-manager-plugin
     bat
     copilot-language-server
+    github-copilot-cli
     dconf
     eza
     fd
@@ -57,7 +58,6 @@ in
     unzip
     zip
     xmlstarlet
-    opencode
     (writeShellApplication {
       name = "launcher";
       runtimeInputs = [ ];
@@ -225,9 +225,11 @@ in
   };
   gtk = {
     enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
+    gtk4 = {
+      theme = {
+        name = "Adwaita-dark";
+        package = pkgs.gnome-themes-extra;
+      };
     };
   };
 }
