@@ -81,9 +81,6 @@ in
     ".config/tmux".source = config.lib.file.mkOutOfStoreSymlink (
       config.home.homeDirectory + "/.dotfiles/config/tmux"
     );
-    ".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink (
-      config.home.homeDirectory + "/.dotfiles/config/starship.toml"
-    );
     ".config/lazygit".source = config.lib.file.mkOutOfStoreSymlink (
       config.home.homeDirectory + "/.dotfiles/config/lazygit"
     );
@@ -142,10 +139,6 @@ in
   };
 
   programs.zoxide = {
-    enable = true;
-  };
-
-  programs.starship = {
     enable = true;
   };
 
