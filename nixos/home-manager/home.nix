@@ -16,14 +16,7 @@ in
     if isLinux then "/home/${config.home.username}" else "/Users/${config.home.username}"
   );
 
-  home.sessionVariables = {
-    EDITOR = "$(which nvim)";
-    VISUAL = "$(which nvim)";
-  };
-
   home.shellAliases = {
-    vi = "nvim";
-    vif = "fzf --preview 'bat {}' | xargs -r nvim";
     ls = "eza -l --icons -s name --group-directories-first";
     cat = "bat";
     lg = "lazygit";
@@ -49,7 +42,6 @@ in
     kubernetes-helm
     lazygit
     lua-language-server
-    neovim
     nerd-fonts.jetbrains-mono
     nixfmt
     stylua
@@ -109,6 +101,12 @@ in
 
   programs.home-manager = {
     enable = true;
+  };
+
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    defaultEditor = true;
   };
 
   programs.bash = {
