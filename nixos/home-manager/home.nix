@@ -184,6 +184,10 @@ in
     enableBashIntegration = true;
   };
 
+  services.dropbox = {
+    enable = true;
+  };
+
   programs.ssh = {
     enable = true;
     includes = [ "*.conf" ];
@@ -192,6 +196,7 @@ in
       "*" = {
         serverAliveInterval = 240;
         forwardAgent = true;
+        addKeysToAgent = "yes";
       };
       "github.com" = {
         hostname = "github.com";
