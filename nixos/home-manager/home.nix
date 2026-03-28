@@ -171,18 +171,17 @@ in
     ];
   };
 
-  programs.keychain = {
-    enable = true;
-    keys = [
-      "id_ed25519"
-    ];
-  };
-
   programs.btop = {
     enable = true;
     settings = {
       vim_keys = true;
     };
+  };
+
+  services.ssh-agent = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
   };
 
   programs.ssh = {
