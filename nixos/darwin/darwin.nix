@@ -9,7 +9,7 @@
 {
 
   imports = [
-    ../common/hm-darwin.nix
+    ./home-darwin.nix
   ];
 
   environment.systemPackages = [
