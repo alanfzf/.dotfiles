@@ -6,15 +6,19 @@
 }:
 {
   imports = [
+    # common
+    ../common/common-home.nix
+    ../common/common-programs.nix
+    ../common/common-services.nix
+    ../common/common-users.nix
+    # nix specific
     ./locale.nix
     ./bootloader.nix
     ./network.nix
     ./services.nix
-    ./packages.nix
-    ./hardware-configuration.nix
+    ./programs.nix
     ./hardware.nix
-    ../common/hm.nix
-    ../common/users.nix
+    ./hardware-configuration.nix
   ];
 
   system.stateVersion = "24.05";
