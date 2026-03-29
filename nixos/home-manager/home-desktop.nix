@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   gtk = {
     enable = true;
@@ -18,7 +18,7 @@
       };
     };
     gtk4 = {
-      theme = null;
+      theme = config.gtk.theme;
       extraConfig = {
         gtk-application-prefer-dark-theme = true;
       };
