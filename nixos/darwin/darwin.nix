@@ -13,7 +13,6 @@
   ];
 
   environment.systemPackages = [
-    pkgs.aerospace
     pkgs.alacritty
     pkgs.mkalias
     pkgs.jetbrains.datagrip
@@ -21,6 +20,8 @@
     pkgs.docker
     pkgs.docker-compose
   ];
+
+  services.aerospace.enable = true;
 
   # users
   users.users."${user}".home = "/Users/${user}";
