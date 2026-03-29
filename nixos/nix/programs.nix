@@ -46,6 +46,8 @@
         settings = {
           "org/gnome/desktop/interface" = {
             color-scheme = "prefer-dark";
+            gtk-theme = "Orchis";
+            icon-theme = "Tela";
           };
         };
       }
