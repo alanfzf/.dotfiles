@@ -20,7 +20,6 @@ in
     ssm-session-manager-plugin
     copilot-language-server
     github-copilot-cli
-    dconf
     gcc
     lua-language-server
     nerd-fonts.jetbrains-mono
