@@ -14,6 +14,7 @@ in
     ./home-packages.nix
     ./home-desktop.nix
     ./home-files.nix
+    ./home-services.nix
   ];
 
   home.stateVersion = "24.11";
