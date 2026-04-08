@@ -1,6 +1,7 @@
 ;; set default site for custom file
-(setq custom-file "~/.local/state/emacs/custom.el")
-(load custom-file 'noerror 'nomessage)
+(defconst xdg-cache-home (expand-file-name "emacs/" "~/.cache/"))
+(defconst xdg-state-home (expand-file-name "emacs/" "~/.local/state/"))
+(defconst xdg-data-home (expand-file-name "emacs/" "~/.local/share/"))
 
 ;; ui settings
 (tool-bar-mode 0)
@@ -27,7 +28,8 @@
 (setq completion-ignore-case t)
 
 ;; adjust directories
-(make-directory "~/.local/share/emacs/eln-cache" t)
-(make-directory "~/.local/share/emacs/packages" t)
-(setq native-comp-eln-load-path '("~/.local/share/emacs/eln-cache"))
-(setq package-user-dir "~/.local/share/emacs/packages")
+(setq native-comp-eln-load-path
+      (list (expand-file-name "eln-cache/" xdg-cache-home)))
+(setq package-user-dir (expand-file-name "packages/" xdg-data-home))
+(setq custom-file (expand-file-name "custom.el" xdg-state-home))
+(load custom-file 'noerror 'nomessage)
