@@ -33,7 +33,7 @@
 ;; Core LSP setup
 (use-package lsp-mode
   :hook (
-	 (php-ts-mode . lsp-deferred)
+   (php-ts-mode . lsp-deferred)
          )
   :commands lsp
   :config
