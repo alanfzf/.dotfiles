@@ -3,7 +3,7 @@ require("kulala").setup({
   additional_curl_options = { "-L" },
   environment_scope = "b",
   global_keymaps = true,
-  global_keymaps_prefix = "<leader>h",
+  global_keymaps_prefix = "<leader>k",
   kulala_keymaps_prefix = "<leader>s",
   ui = {
     default_view = "body",
