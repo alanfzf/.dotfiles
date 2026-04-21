@@ -24,6 +24,7 @@ in
   );
 
   home.shellAliases = {
+    vi = "$(which nvim)";
     ls = "eza -l --icons -s name --group-directories-first";
     cat = "bat";
     lg = "lazygit";
