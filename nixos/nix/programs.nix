@@ -3,16 +3,7 @@
   environment.localBinInPath = true;
   environment.systemPackages = with pkgs; [
     libreoffice
-    foot
-    grim
-    libnotify
-    mako
     playerctl
-    slurp
-    swaybg
-    waypaper
-    wdisplays
-    wl-clipboard
     # android development
     scrcpy
     android-studio
@@ -25,6 +16,19 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [
+      brightnessctl
+      foot
+      grim
+      libnotify
+      mako
+      slurp
+      swaybg
+      swaylock
+      waypaper
+      wdisplays
+      wl-clipboard
+    ];
   };
 
   programs.thunar = {
@@ -33,7 +37,7 @@
 
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-devedition;
+    # package = pkgs.firefox-devedition;
     preferences = {
       "general.autoScroll" = true;
     };
