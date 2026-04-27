@@ -11,6 +11,7 @@
     # database
     jetbrains.datagrip
     mariadb.client
+    bitwarden-desktop
   ];
 
   programs.sway = {

@@ -23,6 +23,10 @@ in
     if isLinux then "/home/${config.home.username}" else "/Users/${config.home.username}"
   );
 
+  home.sessionVariables = {
+    SSH_AUTH_SOCK = "${config.home.homeDirectory}/.bitwarden-ssh-agent.sock";
+  };
+
   home.shellAliases = {
     vi = "$(which nvim)";
     ls = "eza -l --icons -s name --group-directories-first";

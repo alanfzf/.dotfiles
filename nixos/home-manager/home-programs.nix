@@ -82,16 +82,15 @@
         addKeysToAgent = "yes";
         serverAliveInterval = 240;
         forwardAgent = true;
+        identityAgent = "SSH_AUTH_SOCK";
       };
       "github.com" = {
         hostname = "github.com";
         user = "git";
-        identityFile = "~/.ssh/id_ed25519";
       };
       "corpo" = {
         hostname = "i-0bac6612747aab708";
         user = "ubuntu";
-        identityFile = "~/.ssh/Corposistemas.pem";
         port = 22;
         proxyCommand = "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p --profile dev-corpo";
       };
