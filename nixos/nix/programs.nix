@@ -11,11 +11,18 @@
     # database
     jetbrains.datagrip
     mariadb.client
-    bitwarden-desktop
+    foot
+    wdisplays
   ];
 
-  programs.sway = {
+  programs.waybar.enable = true;
+
+  programs.hyprland = {
     enable = true;
+  };
+
+  programs.sway = {
+    enable = false;
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       brightnessctl
