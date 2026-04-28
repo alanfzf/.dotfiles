@@ -23,7 +23,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.sway}/bin/sway";
+          command = "${pkgs.hyprland}/bin/hyprland";
           user = "${user}";
         };
       };

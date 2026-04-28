@@ -33,4 +33,5 @@ cmd=$(
 } | sort | fzf --delimiter=$'\t' --with-nth=1 | cut -f2
 )
 
-[ -n "$cmd" ] && swaymsg exec "$cmd"
+# [ -n "$cmd" ] && swaymsg exec "$cmd"
+[ -n "$cmd" ] && hyprctl dispatch exec "$cmd"
