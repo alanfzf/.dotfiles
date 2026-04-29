@@ -23,7 +23,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.hyprland}/bin/hyprland";
+          command = "${pkgs.sway}/bin/sway";
           user = "${user}";
         };
       };
@@ -34,33 +34,15 @@
     };
   };
 
-  xdg = {
-    portal = {
+  xdg.portal = {
+    enable = true;
+    wlr = {
       enable = true;
-      xdgOpenUsePortal = true;
-      config = {
-        common.default = [ "gtk" ];
-        hyprland.default = [
-          "gtk"
-          "hyprland"
-        ];
+    };
+    config = {
+      common = {
+        default = [ "wlr" ];
       };
-      extraPortals = [
-        pkgs.xdg-desktop-portal-gtk
-        pkgs.xdg-desktop-portal-hyprland
-      ];
     };
   };
-
-  # xdg.portal = {
-  #   enable = true;
-  #   wlr = {
-  #     enable = true;
-  #   };
-  #   config = {
-  #     common = {
-  #       default = [ "wlr" ];
-  #     };
-  #   };
-  # };
 }
