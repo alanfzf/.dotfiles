@@ -11,18 +11,10 @@
     # database
     jetbrains.datagrip
     mariadb.client
-    foot
-    wdisplays
   ];
 
-  programs.waybar.enable = true;
-
-  programs.hyprland = {
-    enable = true;
-  };
-
   programs.sway = {
-    enable = false;
+    enable = true;
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       brightnessctl
