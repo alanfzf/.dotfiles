@@ -30,4 +30,9 @@ in
     lg = "lazygit";
     k = "kubectl";
   };
+
+  home.sessionVariables = {
+    EDITOR = "$(which nvim)";
+    VISUAL = "$(which nvim)";
+  };
 }
