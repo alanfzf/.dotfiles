@@ -2,6 +2,7 @@
 {
   environment.localBinInPath = true;
   environment.systemPackages = with pkgs; [
+    obs-studio
     libreoffice
     playerctl
     # android development
