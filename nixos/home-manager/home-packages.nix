@@ -23,6 +23,7 @@ in
     github-copilot-cli
     gcc
     lua-language-server
+    mpls
     nerd-fonts.jetbrains-mono
     nixfmt
     stylua
