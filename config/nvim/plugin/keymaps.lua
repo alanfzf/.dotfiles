@@ -29,7 +29,11 @@ keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
 -- Go to specific directories
 keymap("n", "<leader>c", "<CMD>tabnew $MYVIMRC<CR><cmd>tcd %:p:h<CR>")
-keymap("n", "<leader>n", "<CMD>tabnew ~/dropbox/Apps/Metanote<CR><CMD>tcd %:p:h<CR>")
+keymap("n", "<leader>n", function()
+  local path = "~/dropbox/Notes"
+  vim.cmd("tabnew " .. path)
+  vim.cmd("tcd " .. path)
+end)
 -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>")
 -- Better window navigation
@@ -98,10 +102,3 @@ keymap("n", "<leader>q", "@q<CR>", opts)
 -- CUSTOM SESSION
 keymap("n", "<leader>ms", "<cmd>lua require('utils.session').create_session()<CR>", opts)
 keymap("n", "<leader>ml", "<cmd>lua require('utils.session').load_session()<CR>", opts)
-
-vim.keymap.set("i", "<CR>", function()
-  if vim.fn.pumvisible() == 1 then
-    return "<C-e><CR>"
-  end
-  return "<CR>"
-end, { expr = true, replace_keycodes = true })
