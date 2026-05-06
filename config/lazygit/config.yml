@@ -20,6 +20,7 @@ customCommands:
   - key: "<c-v>"
     context: "files"
     description: "Create new conventional commit"
+    output: 'terminal'
     prompts:
       - type: "menu"
         key: "Type"

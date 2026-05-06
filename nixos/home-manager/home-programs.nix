@@ -79,20 +79,23 @@
     enableDefaultConfig = false;
     matchBlocks = {
       "*" = {
-        addKeysToAgent = "yes";
-        serverAliveInterval = 240;
-        forwardAgent = true;
+        addKeysToAgent = "no";
+        forwardAgent = false;
         identityAgent = "SSH_AUTH_SOCK";
+        serverAliveInterval = 240;
       };
       "github.com" = {
         hostname = "github.com";
         user = "git";
+        identitiesOnly = true;
+        identityFile = "~/.ssh/id_ed25519_sk";
       };
       "corpo" = {
         hostname = "i-0bac6612747aab708";
         user = "ubuntu";
         port = 22;
         proxyCommand = "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p --profile dev-corpo";
+        identityFile = "~/.ssh/corpo_ed25519";
       };
     };
   };
