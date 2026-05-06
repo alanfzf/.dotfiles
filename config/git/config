@@ -2,9 +2,7 @@
 [user]
   name = alanfzf
   email = 29936954+alanfzf@users.noreply.github.com
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDQT117qOeTzJ4r2DLmede9F4egut0hN+PVoV68GKndK
-[includeIf "hasconfig:remote.*.url:git@github.com:corpo-sistemas/**"]
-  path = ~/.gitconfig-corpo
+  signingkey = ~/.ssh/id_ed25519_sk.pub
 [commit]
   gpgsign = true
 [gpg]
