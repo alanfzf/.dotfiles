@@ -29,6 +29,7 @@
       waypaper
       wdisplays
       wl-clipboard
+      ristretto
     ];
   };
 
