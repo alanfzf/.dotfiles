@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
+let
+  isWSL = builtins.pathExists "/proc/sys/fs/binfmt_misc/WSLInterop";
+in
 {
   gtk = {
-    enable = true;
+    enable = !isWSL;
     theme = {
       package = pkgs.orchis-theme;
       name = "Orchis";
