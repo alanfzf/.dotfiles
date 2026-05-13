@@ -8,13 +8,21 @@ gui:
   showCommandLog: false
   border: 'single'
   mouseEvents: false
-  nerdFontsVersion: "3"
+  nerdFontsVersion: '3'
   showListFooter: false
   showFileTree: false
   showPanelJumps: false
+  showFileIcons: true
+  showDivergenceFromBaseBranch: arrowAndNumber
+  timeFormat: 2026-02-02
+  shortTimeFormat: 18:04
 git:
   parseEmoji: true
   overrideGpg: true
+  autoFetch: false
+  autoRefresh: false
+update:
+  method: never
 customCommands:
   # retrieved from: https://github.com/jesseduffield/lazygit/wiki/Custom-Commands-Compendium#conventional-commit
   - key: "<c-v>"
