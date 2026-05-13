@@ -18,7 +18,7 @@
 [pull]
   rebase = true
 [merge]
-	tool = nvimdiff
+  tool = nvimdiff
 [mergetool]
   keepBackup = false
   prompt = false
@@ -28,6 +28,8 @@
   tool = nvim_difftool
 [difftool "nvim_difftool"]
   cmd = nvim -d "$LOCAL" "$REMOTE"
+[log]
+  date = format:%Y-%m-%d %H:%M:%S %z
 [alias]
   subup = submodule update --init --recursive
   co = checkout
