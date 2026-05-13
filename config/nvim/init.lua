@@ -7,7 +7,6 @@ vim.pack.add({
   "https://github.com/mistweaverco/kulala.nvim",
   "https://github.com/nvim-orgmode/orgmode",
   "https://github.com/nvim-tree/nvim-web-devicons",
-  "https://github.com/otavioschwanck/arrow.nvim",
   -- git
   "https://github.com/lewis6991/gitsigns.nvim",
   -- treesitter
