@@ -79,8 +79,8 @@
     enableDefaultConfig = false;
     matchBlocks = {
       "*" = {
-        addKeysToAgent = "no";
-        forwardAgent = false;
+        addKeysToAgent = "yes";
+        forwardAgent = true;
         identityAgent = "SSH_AUTH_SOCK";
         serverAliveInterval = 240;
       };
