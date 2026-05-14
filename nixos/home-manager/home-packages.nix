@@ -20,7 +20,7 @@ in
     lazygit
     ssm-session-manager-plugin
     copilot-language-server
-    github-copilot-cli
+    opencode
     gcc
     lua-language-server
     mpls
