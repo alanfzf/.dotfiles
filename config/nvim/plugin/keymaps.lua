@@ -28,26 +28,27 @@ keymap("n", "k", "gk")
 keymap("n", "<C-d>", "<C-d>zz")
 keymap("n", "<C-u>", "<C-u>zz")
 -- Go to specific directories
-keymap("n", "<leader>c", "<CMD>tabnew $MYVIMRC<CR><cmd>tcd %:p:h<CR>")
+keymap("n", "<leader>c", "<CMD>tabnew $MYVIMRC<CR><CMD>tcd %:p:h<CR>")
 keymap("n", "<leader>n", function()
   local path = "~/dropbox/org/"
+
   vim.cmd("tabnew " .. path)
   vim.cmd("tcd " .. path)
 end)
 -- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>")
+keymap("n", "<leader>h", "<CMD>nohlsearch<CR>")
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h")
 keymap("n", "<C-j>", "<C-w>j")
 keymap("n", "<C-k>", "<C-w>k")
 keymap("n", "<C-l>", "<C-w>l")
 -- Resize with arrows
-keymap("n", "<C-Up>", "<cmd>resize -2<CR>")
-keymap("n", "<C-Down>", "<cmd>resize +2<CR>")
-keymap("n", "<C-Right>", "<cmd>vertical resize -2<CR>")
-keymap("n", "<C-Left>", "<cmd>vertical resize +2<CR>")
+keymap("n", "<C-Up>", "<CMD>resize -2<CR>")
+keymap("n", "<C-Down>", "<CMD>resize +2<CR>")
+keymap("n", "<C-Right>", "<CMD>vertical resize -2<CR>")
+keymap("n", "<C-Left>", "<CMD>vertical resize +2<CR>")
 -- Navigate tabs
-keymap("n", "<leader>tn", "<cmd>tabnew<CR>")
+keymap("n", "<leader>tn", "<CMD>tabnew<CR>")
 keymap("n", "<C-f>", "q:i")
 
 --[[ * VISUAL MODE * ]]
@@ -55,50 +56,64 @@ keymap("n", "<C-f>", "q:i")
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 -- Move text up and down
-keymap("v", "<A-j>", "<cmd>m .+1<CR>==")
-keymap("v", "<A-k>", "<cmd>m .-2<CR>==")
 keymap("v", "p", '"_dP')
+-- align by char
+keymap("x", "<leader>ac", function()
+  local region = vim.fn.getregionpos(vim.fn.getpos("v"), vim.fn.getpos("."), {
+    type = "v",
+    exclusive = false,
+    eol = false,
+  })
+  local sline = region[1][1][2]
+  local eline = region[#region][1][2]
 
---[[ * VISUAL BLOCK *  ]]
--- Move text up and down
-keymap("x", "<A-j>", "<cmd>move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", "<cmd>move '<-2<CR>gv-gv", opts)
+  vim.ui.input({ prompt = "Align by char: ", default = "" }, function(input)
+    local command = "column -t"
+    local range = string.format("%d,%d", sline, eline)
+
+    if input and input ~= "" then
+      command = string.format("%s -s '%s' -o '%s'", command, input, input)
+    end
+
+    vim.cmd(range .. "!" .. command)
+  end)
+end, { desc = "Align by char", noremap = true, silent = true })
 
 --[[ * OTHER PLUGINS *  ]]
 -- FZF LUA
-keymap("n", "<leader>ff", "<cmd>FzfLua files<CR>", opts)
-keymap("n", "<leader>fg", "<cmd>FzfLua live_grep<CR>", opts)
-keymap("n", "<leader>fb", "<cmd>FzfLua buffers<CR>", opts)
-keymap("n", "<leader>fc", "<cmd>FzfLua colorschemes<CR>", opts)
-keymap("n", "<leader>fs", "<cmd>FzfLua git_status<CR>", opts)
-keymap("n", "<leader>fh", "<cmd>FzfLua git_bcommits<CR>", opts)
-keymap("n", "<leader>fr", "<cmd>FzfLua resume<CR>", opts)
-keymap("n", "<leader>fz", "<cmd>FzfLua zoxide<CR>", opts)
+keymap("n", "<leader>ff", "<CMD>FzfLua files<CR>", opts)
+keymap("n", "<leader>fg", "<CMD>FzfLua live_grep<CR>", opts)
+keymap("n", "<leader>fb", "<CMD>FzfLua buffers<CR>", opts)
+keymap("n", "<leader>fc", "<CMD>FzfLua colorschemes<CR>", opts)
+keymap("n", "<leader>fs", "<CMD>FzfLua git_status<CR>", opts)
+keymap("n", "<leader>fh", "<CMD>FzfLua git_bcommits<CR>", opts)
+keymap("n", "<leader>fr", "<CMD>FzfLua resume<CR>", opts)
+keymap("n", "<leader>fz", "<CMD>FzfLua zoxide<CR>", opts)
 -- OIL NVIM
-keymap("n", "<leader>e", "<cmd>Oil<CR>", opts)
+keymap("n", "<leader>e", "<CMD>Oil<CR>", opts)
 -- LSP
-keymap("n", "<leader>li", "<cmd>checkhealth vim.lsp<CR>")
+keymap("n", "<leader>li", "<CMD>checkhealth vim.lsp<CR>")
 -- GIT SIGNGS
-keymap("n", "<leader>gh", "<cmd>Gitsigns next_hunk<CR>", opts)
-keymap("n", "<leader>gH", "<cmd>Gitsigns prev_hunk<CR>", opts)
-keymap("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<CR>", opts)
-keymap("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", opts)
+keymap("n", "<leader>gh", "<CMD>Gitsigns next_hunk<CR>", opts)
+keymap("n", "<leader>gH", "<CMD>Gitsigns prev_hunk<CR>", opts)
+keymap("n", "<leader>gp", "<CMD>Gitsigns preview_hunk<CR>", opts)
+keymap("n", "<leader>gb", "<CMD>Gitsigns blame_line<CR>", opts)
 -- DAP
-keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", opts)
-keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<CR>", opts)
-keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<CR>", opts)
-keymap("n", "<leader>dcb", "<cmd>lua require'dap'.clear_breakpoints()<CR>", opts)
+keymap("n", "<leader>dc", "<CMD>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<leader>db", "<CMD>lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<leader>do", "<CMD>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<leader>di", "<CMD>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<leader>dr", "<CMD>lua require'dap'.repl.open()<CR>", opts)
+keymap("n", "<leader>dcb", "<CMD>lua require'dap'.clear_breakpoints()<CR>", opts)
 -- DIFF
-keymap("n", "<leader>1", "<cmd>diffget LOCAL<CR>", opts)
-keymap("n", "<leader>2", "<cmd>diffget BASE<CR>", opts)
-keymap("n", "<leader>3", "<cmd>diffget REMOTE<CR>", opts)
-keymap("n", "<leader>df", "<cmd>windo diffthis<CR>", opts)
-keymap("n", "<leader>do", "<cmd>windo diffoff<CR>", opts)
+keymap("n", "<leader>1", "<CMD>diffget LOCAL<CR>", opts)
+keymap("n", "<leader>2", "<CMD>diffget BASE<CR>", opts)
+keymap("n", "<leader>3", "<CMD>diffget REMOTE<CR>", opts)
+keymap("n", "<leader>df", "<CMD>windo diffthis<CR>", opts)
+keymap("n", "<leader>do", "<CMD>windo diffoff<CR>", opts)
 -- MACROS
 keymap("n", "<leader>q", "@q<CR>", opts)
 
 -- CUSTOM SESSION
-keymap("n", "<leader>ms", "<cmd>lua require('utils.session').create_session()<CR>", opts)
-keymap("n", "<leader>ml", "<cmd>lua require('utils.session').load_session()<CR>", opts)
+keymap("n", "<leader>ms", "<CMD>lua require('utils.session').create_session()<CR>", opts)
+keymap("n", "<leader>ml", "<CMD>lua require('utils.session').load_session()<CR>", opts)
