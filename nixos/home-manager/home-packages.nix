@@ -31,8 +31,6 @@ in
     unzip
     zip
     xmlstarlet
-    # kubectl
-    # kubernetes-helm
     (mkScript {
       name = "launcher";
       script = ../../scripts/linux/launcher.sh;

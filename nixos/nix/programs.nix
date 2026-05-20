@@ -5,20 +5,19 @@
     bruno
     obs-studio
     libreoffice
-    playerctl
     # android development
     scrcpy
     android-studio
     android-tools
     # database
     jetbrains.datagrip
-    mariadb.client
   ];
 
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
+      playerctl
       brightnessctl
       foot
       grim
@@ -32,6 +31,10 @@
       wl-clipboard
       ristretto
     ];
+  };
+
+  programs.seahorse = {
+    enable = true;
   };
 
   programs.thunar = {

@@ -2,8 +2,9 @@
 {
 
   environment.systemPackages = with pkgs; [
-    bitwarden-cli
+    mariadb.client
   ];
+
   programs.zsh = {
     enable = true;
   };
