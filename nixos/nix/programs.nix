@@ -2,6 +2,7 @@
 {
   environment.localBinInPath = true;
   environment.systemPackages = with pkgs; [
+    bruno
     obs-studio
     libreoffice
     playerctl

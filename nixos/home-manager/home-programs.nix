@@ -77,7 +77,7 @@
     enable = true;
     includes = [ "*.conf" ];
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "*" = {
         addKeysToAgent = "yes";
         forwardAgent = true;
