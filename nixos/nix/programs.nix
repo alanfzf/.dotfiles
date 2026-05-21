@@ -33,10 +33,6 @@
     ];
   };
 
-  programs.seahorse = {
-    enable = true;
-  };
-
   programs.thunar = {
     enable = true;
   };
