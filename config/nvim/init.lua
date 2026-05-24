@@ -3,7 +3,6 @@ vim.pack.add({
   -- misc/dependencies
   "https://github.com/NotAShelf/direnv.nvim",
   "https://github.com/brenoprata10/nvim-highlight-colors",
-  "https://github.com/mistweaverco/kulala.nvim",
   "https://github.com/nvim-orgmode/orgmode",
   "https://github.com/nvim-tree/nvim-web-devicons",
   -- git
