@@ -33,6 +33,7 @@ require("orgmode").setup({
   org_default_notes_file = "~/dropbox/Apps/Metanote/refile.org",
   org_adapt_indentation = false,
   org_capture_templates = {},
+  org_archive_location = "ARCHIVE.%s",
   org_custom_exports = {
     f = {
       label = "Export to PDF via org-converter",
