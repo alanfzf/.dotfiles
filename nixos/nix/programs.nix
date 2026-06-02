@@ -11,6 +11,7 @@
     android-tools
     # database
     jetbrains.datagrip
+    rustdesk-flutter
   ];
 
   programs.sway = {

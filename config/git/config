@@ -2,9 +2,9 @@
 [user]
   name = alanfzf
   email = 29936954+alanfzf@users.noreply.github.com
-  signingkey = ~/.ssh/id_ed25519_sk.pub
+  signingkey = ~/.ssh/id_ed25519
 [commit]
-  gpgsign = false
+  gpgsign = true
 [gpg]
   format = ssh
 [push]
