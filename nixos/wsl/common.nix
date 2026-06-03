@@ -20,6 +20,4 @@
     ./wsl-programs.nix
     ./wsl.nix
   ];
-
-  system.stateVersion = "25.05";
 }

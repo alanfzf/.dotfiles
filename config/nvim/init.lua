@@ -1,3 +1,4 @@
+vim.opt.runtimepath:append("/home/alan/Projects/trackdown.nvim")
 vim.loader.enable()
 vim.pack.add({
   -- misc/dependencies

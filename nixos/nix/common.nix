@@ -14,14 +14,10 @@
     # nix specific
     ./locale.nix
     ./bootloader.nix
-    ./network.nix
     ./services.nix
     ./programs.nix
     ./hardware.nix
-    ./hardware-configuration.nix
   ];
-
-  system.stateVersion = "24.05";
 
   nix = {
     gc = {

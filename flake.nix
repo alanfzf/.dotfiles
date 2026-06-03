@@ -73,7 +73,7 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system pkgs;
-          modules = [ ./nixos/nix/configuration.nix ];
+          modules = [ ./nixos/nix/alan ];
           specialArgs = {
             inherit inputs user;
           };
@@ -81,7 +81,7 @@
 
         wpc = nixpkgs.lib.nixosSystem {
           inherit system pkgs;
-          modules = [ ./nixos/wsl/configuration.nix ];
+          modules = [ ./nixos/wsl/alan ];
           specialArgs = {
             inherit inputs user;
           };
@@ -93,7 +93,7 @@
         "mb-pro-m3" = nix-darwin.lib.darwinSystem {
           system = aarchSystem;
           pkgs = aarchPkgs;
-          modules = [ ./nixos/darwin/darwin.nix ];
+          modules = [ ./nixos/darwin/alan ];
           specialArgs = { inherit inputs user; };
         };
       };
