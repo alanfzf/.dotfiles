@@ -6,7 +6,6 @@
     obs-studio
     libreoffice
     # android development
-    scrcpy
     android-studio
     android-tools
     # database
