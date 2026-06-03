@@ -19,8 +19,8 @@ gui:
 git:
   parseEmoji: true
   overrideGpg: true
-  autoFetch: false
-  autoRefresh: false
+  autoFetch: true
+  autoRefresh: true
 update:
   method: never
 customCommands:
