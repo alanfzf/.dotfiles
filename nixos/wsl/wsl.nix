@@ -7,8 +7,6 @@
 
   wsl.usbip = {
     enable = true;
-    autoAttach = [
-      "2-9"
-    ];
+    autoAttach = [ ];
   };
 }
