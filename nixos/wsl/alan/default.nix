@@ -1,16 +1,17 @@
 {
-  config,
-  lib,
-  pkgs,
-  user,
   inputs,
-  ...
+  importPkgs,
+  nixpkgs,
 }:
-{
-
-  imports = [
-    inputs.nixos-wsl.nixosModules.default
-  ];
-
-  system.stateVersion = "25.05";
+let
+  system = "x86_64-linux";
+  pkgs = importPkgs system;
+  user = "alan";
+in
+nixpkgs.lib.nixosSystem {
+  inherit system pkgs;
+  modules = [ ./configuration.nix ];
+  specialArgs = {
+    inherit inputs user;
+  };
 }

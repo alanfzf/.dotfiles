@@ -1,5 +1,8 @@
 { ... }:
 {
+
+  # aarchSystem = "aarch64-darwin";
+  # aarchPkgs = importPkgs aarchSystem;
   imports = [
     ../common.nix
   ];

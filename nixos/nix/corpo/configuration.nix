@@ -17,6 +17,6 @@
     ../../common-modules/bluetooth.nix
   ];
 
-  networking.hostName = "nixos";
+  networking.hostName = "corpo";
   system.stateVersion = "25.11";
 }

@@ -32,42 +32,32 @@
       ...
     }@inputs:
     let
-      # overlay
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
       ];
 
-      # functions
       importPkgs =
         system:
         import nixpkgs {
           inherit system overlays;
           config.allowUnfree = true;
         };
-
-      # aarchSystem = "aarch64-darwin";
-      # aarchPkgs = importPkgs aarchSystem;
     in
     {
-      # NixOS
       nixosConfigurations = {
         nixos = import ./nixos/nix/alan {
           inherit inputs importPkgs nixpkgs;
         };
 
-        # wpc = import ./nixos/wsl/alan/system.nix {
-        #   inherit inputs importPkgs nixpkgs;
-        # };
+        corpo = import ./nixos/nix/corpo {
+          inherit inputs importPkgs nixpkgs;
+        };
+
+        wpc = import ./nixos/wsl/alan {
+          inherit inputs importPkgs nixpkgs;
+        };
       };
 
-      # MacOS
-      # darwinConfigurations = {
-      #   "mb-pro-m3" = nix-darwin.lib.darwinSystem {
-      #     system = aarchSystem;
-      #     pkgs = aarchPkgs;
-      #     modules = [ ./nixos/darwin/alan ];
-      #     specialArgs = { inherit inputs; };
-      #   };
-      # };
+      darwinConfigurations = { };
     };
 }
