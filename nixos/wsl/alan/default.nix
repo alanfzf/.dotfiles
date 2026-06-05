@@ -1,7 +1,15 @@
-{ ... }:
 {
+  config,
+  lib,
+  pkgs,
+  user,
+  inputs,
+  ...
+}:
+{
+
   imports = [
-    ../common.nix
+    inputs.nixos-wsl.nixosModules.default
   ];
 
   system.stateVersion = "25.05";

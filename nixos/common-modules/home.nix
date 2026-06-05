@@ -14,7 +14,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users."${user}" = import ../home-manager/home.nix;
+    users."${user}" = import ./hm/home-manager.nix;
     backupFileExtension = ".bckp";
     extraSpecialArgs = {
       homeUser = user;

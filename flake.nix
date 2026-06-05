@@ -32,9 +32,6 @@
       ...
     }@inputs:
     let
-      # users
-      user = "alan";
-
       # overlay
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
@@ -48,59 +45,29 @@
           config.allowUnfree = true;
         };
 
-      homeConfig =
-        user: system: pkgs:
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./nixos/home-manager/home.nix
-          ];
-          extraSpecialArgs = {
-            homeUser = user;
-          };
-        };
-
-      # architecture declaration
-      system = "x86_64-linux";
-      pkgs = importPkgs system;
-
-      aarchSystem = "aarch64-darwin";
-      aarchPkgs = importPkgs aarchSystem;
-
+      # aarchSystem = "aarch64-darwin";
+      # aarchPkgs = importPkgs aarchSystem;
     in
     {
       # NixOS
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-          modules = [ ./nixos/nix/alan ];
-          specialArgs = {
-            inherit inputs user;
-          };
+        nixos = import ./nixos/nix/alan {
+          inherit inputs importPkgs nixpkgs;
         };
 
-        wpc = nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-          modules = [ ./nixos/wsl/alan ];
-          specialArgs = {
-            inherit inputs user;
-          };
-        };
+        # wpc = import ./nixos/wsl/alan/system.nix {
+        #   inherit inputs importPkgs nixpkgs;
+        # };
       };
 
       # MacOS
-      darwinConfigurations = {
-        "mb-pro-m3" = nix-darwin.lib.darwinSystem {
-          system = aarchSystem;
-          pkgs = aarchPkgs;
-          modules = [ ./nixos/darwin/alan ];
-          specialArgs = { inherit inputs user; };
-        };
-      };
-
-      # HM
-      homeConfigurations = {
-        "${user}" = homeConfig user system pkgs;
-      };
+      # darwinConfigurations = {
+      #   "mb-pro-m3" = nix-darwin.lib.darwinSystem {
+      #     system = aarchSystem;
+      #     pkgs = aarchPkgs;
+      #     modules = [ ./nixos/darwin/alan ];
+      #     specialArgs = { inherit inputs; };
+      #   };
+      # };
     };
 }

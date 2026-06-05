@@ -10,11 +10,11 @@ let
 in
 {
   imports = [
-    ./home-programs.nix
-    ./home-packages.nix
-    ./home-desktop.nix
-    ./home-files.nix
-    ./home-services.nix
+    ./gtk.nix
+    ./packages.nix
+    ./programs.nix
+    ./ssh.nix
+    ./symlinks.nix
   ];
 
   home.stateVersion = "24.11";

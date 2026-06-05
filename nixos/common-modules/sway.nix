@@ -1,18 +1,5 @@
-{ config, pkgs, ... }:
+{ user, pkgs, ... }:
 {
-  environment.localBinInPath = true;
-  environment.systemPackages = with pkgs; [
-    bruno
-    obs-studio
-    libreoffice
-    # android development
-    android-studio
-    android-tools
-    # database
-    jetbrains.datagrip
-    rustdesk-flutter
-  ];
-
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -57,5 +44,37 @@
         };
       }
     ];
+  };
+
+  # services
+  services.tumbler = {
+    enable = true;
+  };
+
+  services.gvfs = {
+    enable = true;
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.sway}/bin/sway";
+        user = "${user}";
+      };
+    };
+  };
+
+  # portal
+  xdg.portal = {
+    enable = true;
+    wlr = {
+      enable = true;
+    };
+    config = {
+      common = {
+        default = [ "wlr" ];
+      };
+    };
   };
 }
