@@ -132,4 +132,9 @@
   programs.starship = {
     enable = true;
   };
+
+  progams.password-store = {
+    enable = true;
+  };
+
 }
