@@ -27,7 +27,7 @@
   programs.firefox = {
     enable = true;
     nativeMessagingHosts.packages = [
-      pkgs.passff-host
+      # pkgs.passff-host
     ];
     preferences = {
       "general.autoScroll" = true;
@@ -73,6 +73,12 @@
     enable = true;
     wlr = {
       enable = true;
+      settings = {
+        screencast = {
+          chooser_type = "simple";
+          chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
+        };
+      };
     };
     config = {
       common = {
