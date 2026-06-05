@@ -26,6 +26,9 @@
 
   programs.firefox = {
     enable = true;
+    nativeMessagingHosts.packages = [
+      pkgs.passff-host
+    ];
     preferences = {
       "general.autoScroll" = true;
     };

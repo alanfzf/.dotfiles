@@ -1,8 +1,5 @@
 { ... }:
 {
-  programs.home-manager = {
-    enable = true;
-  };
 
   programs.bash = {
     enable = true;
@@ -29,10 +26,6 @@
       autoload -Uz compinit && compinit
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
     '';
-  };
-
-  programs.zoxide = {
-    enable = true;
   };
 
   programs.direnv = {
@@ -97,44 +90,15 @@
     };
   };
 
-  programs.awscli = {
-    enable = true;
-  };
-
-  programs.bat = {
-    enable = true;
-  };
-
-  programs.eza = {
-    enable = true;
-  };
-
-  programs.fd = {
-    enable = true;
-  };
-
-  programs.fzf = {
-    enable = true;
-  };
-
-  programs.gh = {
-    enable = true;
-  };
-
-  programs.jq = {
-    enable = true;
-  };
-
-  programs.k9s = {
-    enable = false;
-  };
-
-  programs.starship = {
-    enable = true;
-  };
-
-  progams.password-store = {
-    enable = true;
-  };
-
+  programs.home-manager.enable = true;
+  programs.awscli.enable = true;
+  programs.bat.enable = true;
+  programs.eza.enable = true;
+  programs.fd.enable = true;
+  programs.fzf.enable = true;
+  programs.gh.enable = true;
+  programs.jq.enable = true;
+  programs.password-store.enable = true;
+  programs.starship.enable = true;
+  programs.zoxide.enable = true;
 }

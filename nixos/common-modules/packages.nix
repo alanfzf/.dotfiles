@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    pinentry-curses
     # below are optionals
     mariadb.client
     bruno
