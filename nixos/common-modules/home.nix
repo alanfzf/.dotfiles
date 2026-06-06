@@ -18,6 +18,7 @@
     backupFileExtension = ".bckp";
     extraSpecialArgs = {
       homeUser = user;
+      isWSL = config.wsl.enable or false;
     };
   };
 }

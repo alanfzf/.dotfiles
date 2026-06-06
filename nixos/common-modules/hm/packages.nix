@@ -14,6 +14,7 @@ let
 in
 {
   home.packages = with pkgs; [
+    pinentry-curses
     neovim
     git
     tmux

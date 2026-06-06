@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   wsl.usbip = {
     enable = true;
