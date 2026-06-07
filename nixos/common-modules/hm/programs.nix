@@ -77,7 +77,7 @@
         identityAgent = "SSH_AUTH_SOCK";
         serverAliveInterval = 240;
       };
-      "github.com" = {
+      "git" = {
         hostname = "github.com";
         user = "git";
       };
