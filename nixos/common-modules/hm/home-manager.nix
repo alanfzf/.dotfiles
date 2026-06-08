@@ -10,14 +10,15 @@ let
 in
 {
   imports = [
-    ./home-programs.nix
-    ./home-packages.nix
-    ./home-desktop.nix
-    ./home-files.nix
-    ./home-services.nix
+    ./gtk.nix
+    ./packages.nix
+    ./programs.nix
+    ./ssh.nix
+    ./gpg.nix
+    ./symlinks.nix
   ];
 
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.11";
   home.username = homeUser;
   home.homeDirectory = (
     if isLinux then "/home/${config.home.username}" else "/Users/${config.home.username}"

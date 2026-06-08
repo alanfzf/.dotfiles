@@ -32,75 +32,32 @@
       ...
     }@inputs:
     let
-      # users
-      user = "alan";
-
-      # overlay
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
       ];
 
-      # functions
       importPkgs =
         system:
         import nixpkgs {
           inherit system overlays;
           config.allowUnfree = true;
         };
-
-      homeConfig =
-        user: system: pkgs:
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./nixos/home-manager/home.nix
-          ];
-          extraSpecialArgs = {
-            homeUser = user;
-          };
-        };
-
-      # architecture declaration
-      system = "x86_64-linux";
-      pkgs = importPkgs system;
-
-      aarchSystem = "aarch64-darwin";
-      aarchPkgs = importPkgs aarchSystem;
-
     in
     {
-      # NixOS
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-          modules = [ ./nixos/nix/configuration.nix ];
-          specialArgs = {
-            inherit inputs user;
-          };
+        nixos = import ./nixos/nix/alan {
+          inherit inputs importPkgs nixpkgs;
         };
 
-        wpc = nixpkgs.lib.nixosSystem {
-          inherit system pkgs;
-          modules = [ ./nixos/wsl/configuration.nix ];
-          specialArgs = {
-            inherit inputs user;
-          };
+        corpo = import ./nixos/nix/corpo {
+          inherit inputs importPkgs nixpkgs;
+        };
+
+        wpc = import ./nixos/wsl/alan {
+          inherit inputs importPkgs nixpkgs;
         };
       };
 
-      # MacOS
-      darwinConfigurations = {
-        "mb-pro-m3" = nix-darwin.lib.darwinSystem {
-          system = aarchSystem;
-          pkgs = aarchPkgs;
-          modules = [ ./nixos/darwin/darwin.nix ];
-          specialArgs = { inherit inputs user; };
-        };
-      };
-
-      # HM
-      homeConfigurations = {
-        "${user}" = homeConfig user system pkgs;
-      };
+      darwinConfigurations = { };
     };
 }

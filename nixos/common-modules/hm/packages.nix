@@ -14,6 +14,7 @@ let
 in
 {
   home.packages = with pkgs; [
+    pinentry-curses
     neovim
     git
     tmux
@@ -34,7 +35,7 @@ in
     xmlstarlet
     (mkScript {
       name = "launcher";
-      script = ../../scripts/linux/launcher.sh;
+      script = ../../../scripts/linux/launcher.sh;
     })
   ];
 }

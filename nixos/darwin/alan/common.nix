@@ -9,7 +9,7 @@
 {
 
   imports = [
-    ./home-darwin.nix
+    ./common-home.nix
   ];
 
   environment.systemPackages = [
@@ -27,10 +27,8 @@
   users.users."${user}".home = "/Users/${user}";
 
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
-  system.stateVersion = 5;
   system.primaryUser = user;
 
-  nixpkgs.hostPlatform = "aarch64-darwin";
   nix.settings.experimental-features = "nix-command flakes";
 
   # fix for spotlight: https://github.com/LnL7/nix-darwin/issues/139#issuecomment-1230728610

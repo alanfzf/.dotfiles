@@ -1,18 +1,5 @@
-{ config, pkgs, ... }:
+{ user, pkgs, ... }:
 {
-  environment.localBinInPath = true;
-  environment.systemPackages = with pkgs; [
-    bruno
-    obs-studio
-    libreoffice
-    # android development
-    android-studio
-    android-tools
-    # database
-    jetbrains.datagrip
-    rustdesk-flutter
-  ];
-
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -39,6 +26,9 @@
 
   programs.firefox = {
     enable = true;
+    nativeMessagingHosts.packages = [
+      pkgs.passff-host
+    ];
     preferences = {
       "general.autoScroll" = true;
     };
@@ -57,5 +47,43 @@
         };
       }
     ];
+  };
+
+  # services
+  services.tumbler = {
+    enable = true;
+  };
+
+  services.gvfs = {
+    enable = true;
+  };
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.sway}/bin/sway";
+        user = "${user}";
+      };
+    };
+  };
+
+  # portal
+  xdg.portal = {
+    enable = true;
+    wlr = {
+      enable = true;
+      settings = {
+        screencast = {
+          chooser_type = "simple";
+          chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
+        };
+      };
+    };
+    config = {
+      common = {
+        default = [ "wlr" ];
+      };
+    };
   };
 }
