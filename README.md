@@ -1,7 +1,5 @@
 # Dot files
 
-This repository contains some configuration files that i use to personalize my environment.
-
 ## Linux setup
 
 ```bash
