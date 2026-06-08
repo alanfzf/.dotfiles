@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-let
-  isWSL = builtins.pathExists "/proc/sys/fs/binfmt_misc/WSLInterop";
-in
+{
+  config,
+  isWSL,
+  pkgs,
+  ...
+}:
 {
   gtk = {
     enable = !isWSL;
