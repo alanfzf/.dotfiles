@@ -24,7 +24,6 @@ in
     opencode
     gcc
     lua-language-server
-    marksman
     mpls
     nerd-fonts.jetbrains-mono
     nixfmt
