@@ -29,11 +29,10 @@ local function export_to_pdf(exporter)
 end
 
 require("orgmode").setup({
-  org_agenda_files = "~/dropbox/Apps/Metanote/**/*",
-  org_default_notes_file = "~/dropbox/Apps/Metanote/refile.org",
+  org_agenda_files = "~/dropbox/Metanote/**/*",
+  org_default_notes_file = "~/dropbox/Metanote/refile.org",
   org_adapt_indentation = false,
   org_capture_templates = {},
-  org_archive_location = "ARCHIVE.%s",
   org_custom_exports = {
     f = {
       label = "Export to PDF via org-converter",
