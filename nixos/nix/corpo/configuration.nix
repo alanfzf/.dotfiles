@@ -15,6 +15,7 @@
     ../../common-modules/docker.nix
     ../../common-modules/bootloader.nix
     ../../common-modules/bluetooth.nix
+    ../../common-modules/davfs2.nix
   ];
 
   networking.hostName = "corpo";

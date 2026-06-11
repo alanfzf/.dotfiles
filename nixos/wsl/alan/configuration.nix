@@ -10,6 +10,7 @@
     ../../common-modules/users.nix
     ../../common-modules/wsl-usbip.nix
     ../../common-modules/wsl.nix
+    ../../common-modules/davfs2.nix
     inputs.nixos-wsl.nixosModules.default
   ];
 

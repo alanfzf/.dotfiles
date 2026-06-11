@@ -29,8 +29,8 @@ local function export_to_pdf(exporter)
 end
 
 require("orgmode").setup({
-  org_agenda_files = "~/dropbox/Metanote/**/*",
-  org_default_notes_file = "~/dropbox/Metanote/refile.org",
+  org_agenda_files = "~/webdav/**/*",
+  org_default_notes_file = "~/webdav/refile.org",
   org_adapt_indentation = false,
   org_capture_templates = {},
   org_custom_exports = {
