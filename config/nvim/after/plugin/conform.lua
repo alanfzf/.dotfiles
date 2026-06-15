@@ -25,6 +25,7 @@ conform.setup({
     bib = { "tex-fmt" },
     sh = { "shfmt" },
     xml = { "xmlstarlet" },
+    go = { "gofmt" },
     ["*"] = { "trim_whitespace", "trim_newlines" },
   },
   format_after_save = {
