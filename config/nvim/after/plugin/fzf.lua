@@ -17,7 +17,7 @@ fzf.setup({
     RIPGREP_CONFIG_PATH = vim.env.RIPGREP_CONFIG_PATH,
     rg_opts = "--column --line-number --files-with-matches",
     actions = {
-      ["ctrl-n"] = {
+      ["ctrl-r"] = {
         fn = function(_, opts)
           actions.toggle_flag(
             _,
