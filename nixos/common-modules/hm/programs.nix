@@ -72,7 +72,7 @@
     enableDefaultConfig = false;
     settings = {
       "*" = {
-        addKeysToAgent = "yes";
+        addKeysToAgent = "no";
         forwardAgent = true;
         identityAgent = "SSH_AUTH_SOCK";
         serverAliveInterval = 240;
