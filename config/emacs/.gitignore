@@ -4,4 +4,6 @@ elpa/
 bookmarks
 custom.el
 tree-sitter/
+transient/
 *.elc
+projectile-bookmarks.eld
