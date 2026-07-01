@@ -6,6 +6,7 @@
 (setq ring-bell-function 'ignore)
 (setq display-line-numbers-type 'relative)
 (setq inhibit-startup-screen t)
+(setq inhibit-startup-message t)
 (set-face-attribute 'default nil
         :font "JetBrainsMono Nerd Font"
         :height 140)
@@ -21,7 +22,12 @@
 (setq read-file-name-completion-ignore-case t)
 (setq read-buffer-completion-ignore-case t)
 (setq completion-ignore-case t)
+(fido-vertical-mode 1)
 
-;; adjust directories
+;; use a custom-file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror 'nomessage)
+
+;; disable default message
+(defun display-startup-echo-area-message ()
+  (message "Let the hacking begin!"))

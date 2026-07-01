@@ -13,6 +13,7 @@ let
     "config/zathura"
     "config/ideavim/ideavimrc"
     "config/starship.toml"
+    "config/emacs"
   ];
 in
 {
