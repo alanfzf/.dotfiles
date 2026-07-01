@@ -2,8 +2,8 @@ auto-save-list/
 eln-cache/
 elpa/
 bookmarks
+projects
 custom.el
 tree-sitter/
 transient/
 *.elc
-projectile-bookmarks.eld
