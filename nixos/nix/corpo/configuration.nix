@@ -16,6 +16,7 @@
     ../../common-modules/bootloader.nix
     ../../common-modules/bluetooth.nix
     ../../common-modules/davfs2.nix
+    ../../common-modules/tailscale.nix
   ];
 
   networking.hostName = "corpo";
