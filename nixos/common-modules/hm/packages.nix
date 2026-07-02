@@ -20,12 +20,10 @@ in
     git
     tmux
     lazygit
-    ssm-session-manager-plugin
     copilot-language-server
     opencode
     gcc
     lua-language-server
-    mpls
     nerd-fonts.jetbrains-mono
     nixfmt
     stylua
