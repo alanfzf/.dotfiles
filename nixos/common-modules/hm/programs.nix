@@ -101,4 +101,5 @@
   programs.password-store.enable = true;
   programs.starship.enable = true;
   programs.zoxide.enable = true;
+  programs.delta.enable = true;
 }

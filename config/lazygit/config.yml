@@ -21,6 +21,9 @@ git:
   overrideGpg: true
   autoFetch: true
   autoRefresh: true
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never -s --wrap-max-lines=10 --syntax-theme=ansi
 update:
   method: never
 customCommands:
