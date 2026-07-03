@@ -7,3 +7,4 @@ custom.el
 tree-sitter/
 transient/
 *.elc
+tramp

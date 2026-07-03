@@ -1,7 +1,10 @@
-(load "~/.config/emacs/emacs.d/options.el")
-(load "~/.config/emacs/emacs.d/electric-pair.el")
-(load "~/.config/emacs/emacs.d/packages.el")
-(load "~/.config/emacs/emacs.d/keybinds.el")
-(load "~/.config/emacs/emacs.d/org.el")
-(load "~/.config/emacs/emacs.d/dired.el")
-;; (load "~/.config/emacs/emacs.d/treesitter.el")
+;; add folder to be required
+(add-to-list 'load-path
+  (expand-file-name "lisp" user-emacs-directory))
+
+(load "my-dired")
+(load "my-epair")
+(load "my-keybinds")
+(load "my-options")
+(load "my-org")
+(load "my-packages")
