@@ -19,9 +19,9 @@
 
 ;; misc settings
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq read-file-name-completion-ignore-case t)
-(setq read-buffer-completion-ignore-case t)
-(setq completion-ignore-case t)
+;; (setq read-file-name-completion-ignore-case t)
+;; (setq read-buffer-completion-ignore-case t)
+;; (setq completion-ignore-case t)
 (fido-vertical-mode 1)
 
 ;; use a custom-file
@@ -30,9 +30,10 @@
 
 ;; disable default message
 (defun display-startup-echo-area-message ()
-  (message "Let the hacking begin!"))
+  (message "Happy Hacking!"))
 
 (setq project-vc-extra-root-markers '(".project"))
 (global-auto-revert-mode t)
 
 (setq project-switch-commands 'project-dired)
+(keymap-set project-prefix-map "t" #'vterm)
