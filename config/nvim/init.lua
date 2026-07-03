@@ -24,6 +24,5 @@ vim.pack.add({
   "https://github.com/stevearc/oil.nvim",
   "https://github.com/ibhagwan/fzf-lua",
   -- colorscheme
-  "https://github.com/2962fe22-10b3-43f8-8a33-252bd4b7435a/prasiolite",
   "https://github.com/ellisonleao/gruvbox.nvim",
 }, { confirm = false })
