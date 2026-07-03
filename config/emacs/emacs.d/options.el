@@ -33,3 +33,6 @@
   (message "Let the hacking begin!"))
 
 (setq project-vc-extra-root-markers '(".project"))
+(global-auto-revert-mode t)
+
+(setq project-switch-commands 'project-dired)

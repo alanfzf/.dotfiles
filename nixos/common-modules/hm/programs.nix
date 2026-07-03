@@ -82,10 +82,9 @@
         user = "git";
       };
       "corpo" = {
-        hostname = "i-0bac6612747aab708";
+        hostname = "172.31.89.33";
         user = "ubuntu";
-        port = 22;
-        proxyCommand = "aws ssm start-session --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p --profile dev-corpo";
+        identityFile = "~/.ssh/id_ed25519";
       };
     };
   };
@@ -102,4 +101,11 @@
   programs.starship.enable = true;
   programs.zoxide.enable = true;
   programs.delta.enable = true;
+  programs.emacs = {
+    enable = true;
+    extraPackages =
+      epkgs: with epkgs; [
+        vterm
+      ];
+  };
 }
