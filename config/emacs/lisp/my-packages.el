@@ -6,5 +6,6 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;; (add-to-list 'load-path
-;;   (expand-file-name "lisp" user-emacs-directory))
+(let ((dir (expand-file-name "lisp/packages" user-emacs-directory)))
+  (mapc #'load
+        (directory-files dir t "\\.el$")))
