@@ -10,11 +10,7 @@
 ;; keymaps
 (global-set-key (kbd "C-c a") #'org-agenda)
 
-;; only load agenda files when loading the agenda
-(defun my/org-agenda-files ()
-  (directory-files-recursively org-directory "\\.org$"))
-
-(defun my/org-refresh-agenda-files (&rest _)
-  (setq org-agenda-files (my/org-agenda-files)))
-
-(advice-add 'org-agenda :before #'my/org-refresh-agenda-files)
+(setq org-agenda-files
+      (directory-files-recursively "~/webdav" "\\.org$"))
+(setq org-refile-targets
+      '((org-agenda-files :maxlevel . 3)))

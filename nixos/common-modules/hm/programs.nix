@@ -102,6 +102,6 @@
   programs.zoxide.enable = true;
   programs.delta.enable = true;
   programs.emacs = {
-    enable = false;
+    enable = true;
   };
 }
