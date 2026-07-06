@@ -27,7 +27,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.complete = "o^10,.^5,b^5"
 vim.opt.completeopt = { "fuzzy", "menu", "menuone", "noinsert", "noselect", "popup" }
 -- for now is too bad, but in the future could be better
-vim.opt.autocomplete = false
+vim.opt.autocomplete = true
+vim.o.autocompletedelay = 200
 vim.opt.laststatus = 3
 vim.opt.mouse = ""
 vim.opt.winborder = "rounded"
