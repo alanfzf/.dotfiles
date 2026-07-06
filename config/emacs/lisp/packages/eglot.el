@@ -7,10 +7,11 @@
                '((php-mode php-ts-mode) . ("intelephense" "--stdio")))
   (setq eglot-sync-connect 1)
   (setq-default eglot-workspace-configuration
-                `(:intelephense
-                  (:storagePath ,(expand-file-name "~/.intelephense")
-                   :licenceKey ,(string-trim
-                                 (with-temp-buffer
-                                   (insert-file-contents
-                                    (expand-file-name "~/.intelephense/licence.txt"))
-                                   (buffer-string)))))))
+                 `(:intelephense
+                   (:storagePath ,(expand-file-name "~/.intelephense")
+                    :files (:exclude ["**/.direnv/**" "**/node_modules/**"])
+                    :licenceKey ,(string-trim
+                                  (with-temp-buffer
+                                    (insert-file-contents
+                                     (expand-file-name "~/.intelephense/licence.txt"))
+                                    (buffer-string)))))))

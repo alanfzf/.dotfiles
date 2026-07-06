@@ -102,10 +102,6 @@
   programs.zoxide.enable = true;
   programs.delta.enable = true;
   programs.emacs = {
-    enable = true;
-    extraPackages =
-      epkgs: with epkgs; [
-        vterm
-      ];
+    enable = false;
   };
 }
