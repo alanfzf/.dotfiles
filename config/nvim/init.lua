@@ -12,9 +12,8 @@ vim.pack.add({
   "https://github.com/folke/ts-comments.nvim",
   "https://github.com/windwp/nvim-ts-autotag",
   "https://github.com/windwp/nvim-autopairs",
-  -- autocompletion
-  { src = "https://github.com/saghen/blink.cmp", version = vim.version.range("*") },
-  "https://github.com/L3MON4D3/LuaSnip",
+  -- snippets
+  "https://github.com/nvim-mini/mini.snippets",
   "https://github.com/rafamadriz/friendly-snippets",
   -- code formatting
   "https://github.com/stevearc/conform.nvim",
