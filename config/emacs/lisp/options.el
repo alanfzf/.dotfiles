@@ -37,5 +37,8 @@
 (global-auto-revert-mode t)
 
 (setq project-switch-commands 'project-dired)
-
 (keymap-set project-prefix-map "t" #'ghostel-project)
+
+;; show a red square if theres whitespace at the end
+(setq whitespace-style '(face trailing))
+(global-whitespace-mode 1)
