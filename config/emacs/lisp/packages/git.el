@@ -2,4 +2,6 @@
   :config
   (global-git-gutter-mode +1))
 
-(use-package magit)
+(use-package magit
+  :pin melpa
+)
