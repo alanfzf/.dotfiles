@@ -15,6 +15,10 @@
 ;; (setq org-refile-targets
 ;;   '((org-agenda-files :maxlevel . 3)))
 
+;; dictionary options
+(setq ispell-program-name "aspell")
+(setq ispell-dictionary "spanish")
+
 ;; keybinds
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
