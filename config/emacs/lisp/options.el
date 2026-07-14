@@ -42,3 +42,6 @@
 ;; show a red square if theres whitespace at the end
 (setq whitespace-style '(face trailing))
 (global-whitespace-mode 1)
+
+(defadvice split-window (after split-window-after activate)
+  (other-window 1))
