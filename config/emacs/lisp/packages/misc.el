@@ -8,11 +8,6 @@
 (use-package nerd-icons-dired
   :hook (dired-mode . nerd-icons-dired-mode))
 
-;; editorconfig
-(use-package editorconfig
-  :config
-  (editorconfig-mode 1))
-
 ;; direnv
 (use-package direnv
   :custom

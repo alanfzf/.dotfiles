@@ -45,3 +45,5 @@
 
 (defadvice split-window (after split-window-after activate)
   (other-window 1))
+
+(editorconfig-mode 1)
