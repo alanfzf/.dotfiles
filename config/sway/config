@@ -49,7 +49,7 @@ input * xkb_options "ctrl:nocaps"
 
 input type:keyboard {
     xkb_layout us
-    # xkb_variant altgr-intl
+    xkb_variant altgr-intl
 }
 
 input type:pointer {

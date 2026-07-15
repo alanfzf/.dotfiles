@@ -1,12 +1,15 @@
 ;; treesitter source repo list
 (setq treesit-language-source-alist
   '(
+     ;; php related code
      (jsdoc . ("https://github.com/tree-sitter/tree-sitter-jsdoc" "master"))
      (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript" "master"))
      (css . ("https://github.com/tree-sitter/tree-sitter-css" "master"))
      (html . ("https://github.com/tree-sitter/tree-sitter-html" "master"))
      (phpdoc . ("https://github.com/claytonrcarter/tree-sitter-phpdoc" "master"))
      (php . ("https://github.com/tree-sitter/tree-sitter-php" "master" "php/src"))
+     ;; kotlin
+     (kotlin . ("https://github.com/fwcd/tree-sitter-kotlin"))
      )
   )
 
