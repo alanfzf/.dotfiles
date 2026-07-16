@@ -18,4 +18,6 @@
 (use-package ghostel
   :config
   (setq ghostel-term "xterm-256color")
+  :init
+  (setq ghostel-module-auto-install 'download)
   )

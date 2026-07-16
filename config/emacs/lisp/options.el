@@ -47,3 +47,5 @@
   (other-window 1))
 
 (editorconfig-mode 1)
+;; autocompletion mode
+;; (global-completion-preview-mode 1)
