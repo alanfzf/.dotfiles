@@ -31,7 +31,7 @@
 
 ;; disable default message
 (defun display-startup-echo-area-message ()
-  (message "Happy Hacking!"))
+  (message nil))
 
 (setq project-vc-extra-root-markers '(".project"))
 (global-auto-revert-mode t)
