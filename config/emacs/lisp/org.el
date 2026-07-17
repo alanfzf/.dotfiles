@@ -14,14 +14,21 @@
   (list org-directory))
 ;; (setq org-refile-targets
 ;;   '((org-agenda-files :maxlevel . 3)))
+(defun my-open-org-refile ()
+  "Open the main Org refile file."
+  (interactive)
+  (find-file my-org-refile))
+
 
 ;; dictionary options
 (setq ispell-program-name "aspell")
 (setq ispell-dictionary "spanish")
 
+
 ;; keybinds
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
+(global-set-key (kbd "C-c r") #'my-open-org-refile)
 
 ;; file associations
 (add-to-list 'auto-mode-alist '("\\.org_archive\\'" . org-mode))
