@@ -49,3 +49,14 @@
 (editorconfig-mode 1)
 ;; autocompletion mode
 ;; (global-completion-preview-mode 1)
+
+;; remove trailing whitespace emacs
+(add-hook 'before-save-hook
+  'delete-trailing-whitespace)
+
+;; add elisp auto indent when saving
+(defun my-elisp-format-on-save ()
+  (when (derived-mode-p 'emacs-lisp-mode)
+    (indent-region (point-min) (point-max))))
+
+(add-hook 'before-save-hook #'my-elisp-format-on-save)

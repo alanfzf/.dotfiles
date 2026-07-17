@@ -13,5 +13,5 @@
 (load-file-path "packages/git.el")
 (load-file-path "packages/eglot.el")
 (load-file-path "packages/corfu.el")
-(load-file-path "packages/apheleia.el")
+(load-file-path "packages/reformatter.el")
 (load-file-path "packages/modes.el")
