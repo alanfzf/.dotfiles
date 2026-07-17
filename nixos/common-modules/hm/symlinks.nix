@@ -14,6 +14,7 @@ let
     "config/ideavim/ideavimrc"
     "config/starship.toml"
     "config/emacs"
+    "config/opencode"
   ];
 in
 {
