@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/tui.json",
+  "mouse": false,
+  "scroll_acceleration": {
+    "enabled": true
+  },
+  "keybinds": {
+    "messages_line_down": "ctrl+n",
+    "messages_line_up": "ctrl+p"
+  }
+}
