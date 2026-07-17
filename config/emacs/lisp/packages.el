@@ -14,3 +14,4 @@
 (load-file-path "packages/eglot.el")
 (load-file-path "packages/corfu.el")
 (load-file-path "packages/apheleia.el")
+(load-file-path "packages/modes.el")
