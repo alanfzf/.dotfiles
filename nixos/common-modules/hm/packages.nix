@@ -14,10 +14,12 @@ let
 in
 {
   home.packages = with pkgs; [
-    (aspellWithDicts (dicts: with dicts; [
-      en
-      es
-    ]))
+    (aspellWithDicts (
+      dicts: with dicts; [
+        en
+        es
+      ]
+    ))
     pinentry-curses
     neovim
     git
