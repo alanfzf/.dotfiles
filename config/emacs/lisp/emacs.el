@@ -7,7 +7,6 @@
   (scroll-bar-mode 0)
   (global-display-line-numbers-mode 1)
   ;; useful modes
-  (fido-vertical-mode 1)
   (electric-pair-mode 1)
   (editorconfig-mode 1)
   (global-auto-revert-mode t)
@@ -36,13 +35,6 @@
   (make-backup-files nil)
   (auto-save-default nil)
   (create-lockfiles nil)
-
-  ;; autocompletion
-  (read-file-name-completion-ignore-case t)
-  (read-buffer-completion-ignore-case t)
-  (completion-ignore-case t)
-  ;; (completion-styles
-  ;;   '(basic substring partial-completion flex))
 
   ;; short answers
   (read-answer-short t)
@@ -100,3 +92,35 @@
           #'my-elisp-format-on-save
           nil
           t))))
+
+(use-package icomplete
+  :demand t
+  :custom
+  (completion-styles '(flex partial-completion substring))
+  (completion-category-overrides
+    '((buffer
+        (styles  . (initials flex))
+        (cycle   . 10))
+       (file
+         (styles              . (basic substring))
+         (cycle               . 10))
+       (symbol-help
+         (styles basic shorthand substring))))
+  (read-file-name-completion-ignore-case t)
+  (read-buffer-completion-ignore-case t)
+  (completion-ignore-case t)
+  (max-mini-window-height 0.2)
+  (icomplete-prospects-height 15)
+  (icomplete-show-matches-on-no-input t)
+
+  :config
+  (icomplete-mode)
+  (icomplete-vertical-mode)
+
+  :bind
+  (
+    :map  icomplete-vertical-mode-minibuffer-map
+    ("TAB"       . icomplete-force-complete)
+    ("RET"       . icomplete-force-complete-and-exit)
+    )
+  )
