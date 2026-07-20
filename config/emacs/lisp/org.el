@@ -1,34 +1,35 @@
-;; variables
-(defvar my-org-files
-  (expand-file-name "~/webdav")
+(use-package org
+  :ensure nil
+  :defer t
+  :init
+  (defvar my-org-files
+    (expand-file-name "~/webdav/")
+    "Directory containing my Org files.")
+
+  (defvar my-org-refile
+    (expand-file-name "refile.org" my-org-files)
+    "Main Org refile file.")
+
+  (defun my-open-org-refile ()
+    "Open the main Org refile file."
+    (interactive)
+    (find-file my-org-refile))
+
+  :custom
+  (org-log-done 'time)
+  (org-directory my-org-files)
+  (org-default-notes-file my-org-refile)
+  (org-agenda-files (list my-org-files))
+  (org-refile-targets
+    '((org-agenda-files :maxlevel . 3)))
+
+  :bind
+  (
+    ("C-c a" . org-agenda)
+    ("C-c c" . org-capture)
+    ("C-c r" . my-open-org-refile)
+    )
+
+  :mode
+  ("\\.org_archive\\'" . org-mode)
   )
-
-(defvar my-org-refile
-  (expand-file-name "refile.org" my-org-files))
-
-;; options
-(setq org-log-done 'time)
-(setq org-directory my-org-files)
-(setq org-default-notes-file my-org-refile)
-(setq org-agenda-files
-  (list org-directory))
-;; (setq org-refile-targets
-;;   '((org-agenda-files :maxlevel . 3)))
-(defun my-open-org-refile ()
-  "Open the main Org refile file."
-  (interactive)
-  (find-file my-org-refile))
-
-
-;; dictionary options
-(setq ispell-program-name "aspell")
-(setq ispell-dictionary "spanish")
-
-
-;; keybinds
-(global-set-key (kbd "C-c a") #'org-agenda)
-(global-set-key (kbd "C-c c") #'org-capture)
-(global-set-key (kbd "C-c r") #'my-open-org-refile)
-
-;; file associations
-(add-to-list 'auto-mode-alist '("\\.org_archive\\'" . org-mode))

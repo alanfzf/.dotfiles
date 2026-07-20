@@ -24,7 +24,7 @@
 
 (use-package corfu
   :custom
-  (corfu-auto t)
+  (corfu-auto nil)
   (corfu-auto-prefix 1)
   (corfu-cycle t)
   (corfu-auto-delay 0.2)
