@@ -1,6 +1,6 @@
+(load-file-path "emacs.el")
 (load-file-path "dired.el")
-(load-file-path "epair.el")
+(load-file-path "project.el")
 (load-file-path "keybinds.el")
-(load-file-path "options.el")
 (load-file-path "org.el")
 (load-file-path "packages.el")

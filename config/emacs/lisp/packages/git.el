@@ -1,5 +1,5 @@
 (use-package git-gutter
-  :config
+  :init
   (global-git-gutter-mode +1)
   :bind
   (
