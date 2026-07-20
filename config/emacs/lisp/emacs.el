@@ -35,6 +35,7 @@
   ;; backup files
   (make-backup-files nil)
   (auto-save-default nil)
+  (auto-save-list-file-prefix nil)
   (create-lockfiles nil)
 
   ;; autocompletion

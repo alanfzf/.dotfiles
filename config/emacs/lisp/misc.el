@@ -23,8 +23,8 @@
           ("m" . ghostel-project)
           ("M" . ghostel-project-list-buffers)
           )
+  :custom
+  (ghostel-module-auto-install 'download)
   :config
   (setq ghostel-term "xterm-256color")
-  :init
-  (setq ghostel-module-auto-install 'download)
   )
