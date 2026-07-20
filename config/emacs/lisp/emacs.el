@@ -41,6 +41,8 @@
   (read-file-name-completion-ignore-case t)
   (read-buffer-completion-ignore-case t)
   (completion-ignore-case t)
+  ;; (completion-styles
+  ;;   '(basic substring partial-completion flex))
 
   ;; short answers
   (read-answer-short t)
@@ -71,6 +73,7 @@
   ;; misc
   (sentence-end-double-space nil)
   (help-window-select t)
+
 
   :config
   ;; custom file

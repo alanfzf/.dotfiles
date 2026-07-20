@@ -1,7 +1,8 @@
 ;; disable mouse
-(use-package disable-mouse
-  :config
-  (global-disable-mouse-mode))
+(use-package inhibit-mouse
+  :init
+  (inhibit-mouse-mode 1)
+  )
 
 ;; nerdicons
 (use-package nerd-icons)
