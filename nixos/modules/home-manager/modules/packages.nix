@@ -30,6 +30,7 @@ in
     gcc
     lua-language-server
     nerd-fonts.jetbrains-mono
+    nerd-fonts.meslo-lg
     nixfmt
     stylua
     tree-sitter
