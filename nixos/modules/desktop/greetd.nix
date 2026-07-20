@@ -1,11 +1,12 @@
 {
-  pkgs,
   lib,
   config,
   ...
 }:
+let
+  user = config.my.user;
+in
 {
-
   options = {
     my.greetd.command = lib.mkOption {
       type = lib.types.str;

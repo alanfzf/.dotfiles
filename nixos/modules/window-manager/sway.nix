@@ -3,6 +3,10 @@
 {
   imports = [
     ../desktop
+    ../hardware
+    ../services
+    ../system
+    ../home-manager/home.nix
   ];
 
   my.greetd.command = "${pkgs.sway}/bin/sway";

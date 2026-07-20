@@ -1,5 +1,5 @@
 {
-  homeUser,
+  myUser,
   config,
   lib,
   pkgs,
@@ -19,11 +19,8 @@ in
   ];
 
   home.stateVersion = "25.11";
-  home.username = homeUser;
-  home.homeDirectory = (
-    if isLinux then "/home/${config.home.username}" else "/Users/${config.home.username}"
-  );
-
+  home.username = myUser;
+  home.homeDirectory = (if isLinux then "/home/${myUser}" else "/Users/${myUser}");
   home.shellAliases = {
     vi = "$(which nvim)";
     ls = "eza -l --icons -s name --group-directories-first";
@@ -31,7 +28,6 @@ in
     lg = "lazygit";
     k = "kubectl";
   };
-
   home.sessionVariables = {
     EDITOR = "$(which nvim)";
     VISUAL = "$(which nvim)";
