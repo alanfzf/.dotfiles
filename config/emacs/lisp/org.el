@@ -15,6 +15,12 @@
     (interactive)
     (find-file my-org-refile))
 
+  (defun my-org-mode-setup ()
+    "make org mode work with completion-preview"
+    (setq-local completion-preview-commands
+      (append '(org-self-insert-command
+                 org-delete-backward-char)
+        completion-preview-commands)))
   :custom
   (org-log-done 'time)
   (org-directory my-org-files)
@@ -22,6 +28,9 @@
   (org-agenda-files (list my-org-files))
   (org-refile-targets
     '((org-agenda-files :maxlevel . 3)))
+
+  :hook
+  (org-mode . my-org-mode-setup)
 
   :bind
   (
