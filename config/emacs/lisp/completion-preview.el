@@ -10,13 +10,13 @@
       #'tempel-complete nil t))
 
   :hook
-  (prog-mode . tempel-setup-capf))
+  ((prog-mode text-mode org-mode) . tempel-setup-capf))
 
 
 (use-package completion-preview
   :ensure nil
   :hook
-  (prog-mode . completion-preview-mode)
+  ((prog-mode org-mode text-mode) . completion-preview-mode)
   :custom
   (completion-preview-minimum-symbol-length 1)
   :bind
