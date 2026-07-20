@@ -1,5 +1,11 @@
-{ pkgs, ... }:
+{ ... }:
 {
+  wsl = {
+    enable = true;
+    defaultUser = user;
+    startMenuLaunchers = true;
+  };
+
   wsl.usbip = {
     enable = true;
     autoAttach = [ ];
