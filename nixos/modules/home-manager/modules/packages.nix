@@ -38,7 +38,7 @@ in
     xmlstarlet
     (mkScript {
       name = "launcher";
-      script = ../../../scripts/linux/launcher.sh;
+      script = ../../../../scripts/linux/launcher.sh;
     })
   ];
 }

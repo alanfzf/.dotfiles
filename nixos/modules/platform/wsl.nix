@@ -1,8 +1,8 @@
-{ ... }:
+{ config, ... }:
 {
   wsl = {
     enable = true;
-    defaultUser = user;
+    defaultUser = config.my.user;
     startMenuLaunchers = true;
   };
 

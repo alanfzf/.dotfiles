@@ -45,15 +45,11 @@
     in
     {
       nixosConfigurations = {
-        nixos = import ./nixos/nix/alan {
+        corpo = import ./nixos/hosts/corpo {
           inherit inputs importPkgs nixpkgs;
         };
 
-        corpo = import ./nixos/nix/corpo {
-          inherit inputs importPkgs nixpkgs;
-        };
-
-        wpc = import ./nixos/wsl/alan {
+        wpc = import ./nixos/hosts/wsl {
           inherit inputs importPkgs nixpkgs;
         };
       };

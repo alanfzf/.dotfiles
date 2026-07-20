@@ -2,10 +2,12 @@
   config,
   pkgs,
   inputs,
-  user,
   ...
 }:
-
+let
+  user = config.my.user;
+  isWSL = config.wsl.enable or false;
+in
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -14,11 +16,11 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users."${user}" = import ./hm/home-manager.nix;
     backupFileExtension = ".bckp";
+    users.${user} = import ./modules;
     extraSpecialArgs = {
-      homeUser = user;
-      isWSL = config.wsl.enable or false;
+      myUser = user;
+      isWSL = isWSL;
     };
   };
 }

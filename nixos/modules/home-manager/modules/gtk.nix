@@ -1,6 +1,6 @@
 {
-  config,
   isWSL,
+  config,
   pkgs,
   ...
 }:
