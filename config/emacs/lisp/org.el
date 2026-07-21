@@ -28,7 +28,9 @@
   (org-agenda-files (list my-org-files))
   (org-refile-targets
     '((org-agenda-files :maxlevel . 3)))
-
+  ;; Display destinations as file/heading.
+  (org-refile-use-outline-path 'file)
+  (org-outline-path-complete-in-steps nil)
   :hook
   (org-mode . my-org-mode-setup)
 
