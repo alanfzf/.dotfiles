@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
 
   programs.bash = {
@@ -102,4 +102,28 @@
   programs.zoxide.enable = true;
   programs.delta.enable = true;
   programs.emacs.enable = true;
+  programs.rclone = {
+    enable = true;
+    remotes = {
+      webdav = {
+        config = {
+          type = "webdav";
+          url = "https://my-webdav.fly.dev";
+          vendor = "other";
+          user = "admin";
+          pass = "3FjTZTRIrldWJJSv-2mSZCzkSYTMvUyoE7q_";
+        };
+        mounts."" = {
+          enable = true;
+          autoMount = true;
+          mountPoint = "${config.home.homeDirectory}/WebDAV";
+          options = {
+            vfs-cache-mode = "full";
+          };
+        };
+
+      };
+
+    };
+  };
 }

@@ -1,9 +1,12 @@
 { ... }:
 {
   homebrew = {
-    enable = false;
+    enable = true;
     casks = [ ];
     brews = [ ];
     masApps = [ ];
+    onActivation = {
+      cleanup = "zap";
+    };
   };
 }
