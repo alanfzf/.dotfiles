@@ -28,6 +28,8 @@
       wdisplays
       wl-clipboard
       ristretto
+      sway-contrib.grimshot
+      satty
     ];
   };
 
