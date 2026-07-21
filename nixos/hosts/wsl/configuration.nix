@@ -1,9 +1,7 @@
 { inputs, ... }:
 {
-
   imports = [
-    ../../modules/platform/wsl.nix
-    inputs.nixos-wsl.nixosModules.default
+    ../../modules/wsl
   ];
 
   my.user = "alan";

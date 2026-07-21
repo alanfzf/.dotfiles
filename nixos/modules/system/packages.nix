@@ -5,7 +5,7 @@
   ...
 }:
 let
-  isWSL = config.wsl.enable;
+  isWSL = config.wsl.enable or false;
 in
 {
   config = lib.mkIf (!isWSL) {
