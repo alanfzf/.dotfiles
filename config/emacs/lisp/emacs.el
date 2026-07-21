@@ -100,9 +100,9 @@
   :demand t
   :bind
   (:map icomplete-minibuffer-map
-    ("TAB"       . icomplete-forward-completions)
-    ("<tab>"     . icomplete-forward-completions)
-    ("<backtab>" . icomplete-backward-completions)
+    ("TAB"       . icomplete-force-complete)
+    ("<tab>"     . icomplete-force-complete)
+    ("<backtab>" . icomplete-force-complete)
     ("RET" . icomplete-force-complete-and-exit)
     )
   :custom
@@ -112,8 +112,9 @@
   (completion-ignore-case t)
   ;; icomplete setup
   (icomplete-show-matches-on-no-input t)
-  (icomplete-scroll t)
   :config
-  (icomplete-mode t)
-  (icomplete-vertical-mode t)
+  (icomplete-mode 1)
+  (icomplete-vertical-mode 1)
+  ;; idk why this one needs to be set afterwards
+  (setq icomplete-scroll t)
   )
