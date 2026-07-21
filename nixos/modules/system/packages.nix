@@ -1,17 +1,19 @@
-{ config, pkgs, ... }:
 {
-  options = {
-
-  };
-
-  config = {
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+let
+  isWSL = config.wsl.enable;
+in
+{
+  config = lib.mkIf (!isWSL) {
     environment.localBinInPath = true;
     environment.systemPackages = with pkgs; [
       # below are optionals
-      mariadb.client
       bruno
       obs-studio
-      libreoffice
       # android development
       android-studio
       android-tools
