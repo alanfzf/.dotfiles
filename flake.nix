@@ -54,6 +54,10 @@
         };
       };
 
-      darwinConfigurations = { };
+      darwinConfigurations = {
+        "mb-pro-m3" = import ./nixos/hosts/mbpro {
+          inherit inputs importPkgs nixpkgs;
+        };
+      };
     };
 }

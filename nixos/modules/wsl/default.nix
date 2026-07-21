@@ -1,9 +1,14 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  ...
+}:
 {
   imports = [
     ../services
     ../system
     ../home-manager/home.nix
+    inputs.nixos-wsl.nixosModules.default
   ];
 
   config = {
