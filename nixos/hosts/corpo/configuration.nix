@@ -8,5 +8,4 @@
   my.user = "alan";
   my.hostName = "corpo";
   my.vpn.enable = true;
-  my.davfs.enable = true;
 }
