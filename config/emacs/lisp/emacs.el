@@ -7,7 +7,6 @@
   (scroll-bar-mode 0)
   (global-display-line-numbers-mode 1)
   ;; useful modes
-  (fido-vertical-mode 1)
   (electric-pair-mode 1)
   (editorconfig-mode 1)
   (global-auto-revert-mode t)
@@ -38,13 +37,6 @@
   (auto-save-list-file-prefix nil)
   (create-lockfiles nil)
 
-  ;; autocompletion
-  (read-file-name-completion-ignore-case t)
-  (read-buffer-completion-ignore-case t)
-  (completion-ignore-case t)
-  ;; (completion-styles
-  ;;   '(basic substring partial-completion flex))
-
   ;; short answers
   (read-answer-short t)
   (use-short-answers t)
@@ -72,9 +64,9 @@
   (uniquify-buffer-name-style 'forward)
 
   ;; misc
+  (enable-recursive-minibuffers t)
   (sentence-end-double-space nil)
   (help-window-select t)
-
 
   :config
   ;; custom file
@@ -101,3 +93,27 @@
           #'my-elisp-format-on-save
           nil
           t))))
+
+;; icomplete
+(use-package icomplete
+  :ensure nil
+  :demand t
+  :bind
+  (:map icomplete-minibuffer-map
+    ("TAB"       . icomplete-forward-completions)
+    ("<tab>"     . icomplete-forward-completions)
+    ("<backtab>" . icomplete-backward-completions)
+    ("RET" . icomplete-force-complete-and-exit)
+    )
+  :custom
+  (completion-styles '(basic substring partial-completion flex))
+  (read-file-name-completion-ignore-case t)
+  (read-buffer-completion-ignore-case t)
+  (completion-ignore-case t)
+  ;; icomplete setup
+  (icomplete-show-matches-on-no-input t)
+  (icomplete-scroll t)
+  :config
+  (icomplete-mode t)
+  (icomplete-vertical-mode t)
+  )
