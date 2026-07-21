@@ -20,6 +20,7 @@ in
         es
       ]
     ))
+    mariadb.client
     pinentry-curses
     neovim
     git
@@ -30,7 +31,7 @@ in
     gcc
     lua-language-server
     nerd-fonts.jetbrains-mono
-    nerd-fonts.meslo-lg
+    nerd-fonts.iosevka
     nixfmt
     stylua
     tree-sitter
