@@ -30,7 +30,7 @@ keymap("n", "<C-u>", "<C-u>zz")
 -- Go to specific directories
 keymap("n", "<leader>c", "<CMD>tabnew $MYVIMRC<CR><CMD>tcd %:p:h<CR>")
 keymap("n", "<leader>n", function()
-  local path = "~/webdav/"
+  local path = "~/WebDAV/"
 
   vim.cmd("tabnew " .. path)
   vim.cmd("tcd " .. path)

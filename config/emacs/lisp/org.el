@@ -3,7 +3,7 @@
   :defer t
   :init
   (defvar my-org-files
-    (expand-file-name "~/webdav/")
+    (expand-file-name "~/WebDAV/")
     "Directory containing my Org files.")
 
   (defvar my-org-refile
