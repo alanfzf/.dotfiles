@@ -90,7 +90,7 @@ bindsym $mod+a focus parent
 
 # ** [SCREENSHOTS] **
 bindsym $mod+s exec grimshot save output - | satty --filename - --copy-command wl-copy
-bindsym $mod+Shift+s grimshot copy area
+bindsym $mod+Shift+s exec grimshot copy area
 
 # ** [BRIGHTNESS ] **
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
