@@ -1,0 +1,155 @@
+* My Experience Using Emacs for a Month as a Long-Time Neovim User
+
+Hello! I'm a long-time Vim/Neovim user, and I've wanted to try Emacs for a while. I finally decided to use it for a month to see whether it could become my daily driver and main editor.
+
+Here are my [[https://github.com/alanfzf/.dotfiles][dotfiles]] for anyone interested in seeing my configuration.
+
+I tried to replicate my Neovim setup as closely as possible while still respecting the “Emacs way” of doing things. I used built-in features whenever possible and only installed packages when I felt they were truly necessary.
+
+I tested Emacs for almost all of July 2026 using *GNU Emacs 30.2*. These are my thoughts so far.
+
+** Keybindings
+
+I got used to the Emacs keybindings surprisingly quickly and experienced very little friction. When I'm in the terminal, I already tend to use shortcuts such as =C-a=, =C-e=, =C-k=, =C-f=, and =C-b= to move around.
+
+I don't think the default Emacs keybindings are that bad. Most of them are actually quite good. I even find some of them faster than their Vim equivalents, and they are not too difficult to get accustomed to.
+
+However, some keybindings are genuinely unpleasant. =M-v=, for example, feels awkward to me. In general, many of the Meta-based bindings are not particularly comfortable.
+
+** Code Navigation
+
+This is one of my biggest issues with Emacs.
+
+I dislike how dependent code navigation is on the package ecosystem and the quality of individual major modes. To navigate efficiently through code structures, you often need a well-written major mode.
+
+In Vim, basic text operations work consistently regardless of whether you are using Java, C, PHP, or another language. You can operate around common structures such as parentheses, brackets, braces, and quotes without relying heavily on language-specific support.
+
+These structures are common across many programming languages, so I would prefer Emacs to provide more consistent built-in ways to navigate and manipulate them.
+
+Another issue is editing the contents of strings.
+
+For example:
+
+#+begin_src emacs-lisp
+(message "hello beautiful world")
+;;               ^
+;;               Cursor is inside the quoted string.
+#+end_src
+
+Pressing =C-M-k= here deletes only the next expression, which in this case is the next word:
+
+#+begin_src emacs-lisp
+(message "hello  world")
+;;               "beautiful" was deleted.
+#+end_src
+
+To delete the entire string expression, the cursor must first be moved to the beginning of the string:
+
+#+begin_src emacs-lisp
+(message "hello beautiful world")
+;;       ^
+#+end_src
+
+This feels unnecessarily precise compared with Vim's text objects, where the operation works as long as the cursor is somewhere inside the quotes.
+
+Before someone suggests Evil Mode: I personally dislike the idea of using a Vim emulation layer. It is not really Vim, but it is also not really standard Emacs. To me, it feels like being stuck in an awkward middle ground rather than fully using either editor.
+
+** Built-In Features
+
+Most of the built-in features are excellent. Some of my favorites are:
+
+* Dired
+* =project.el=
+* =completion-preview=
+* =use-package=
+* Org Mode
+
+However, some built-in features still feel incomplete.
+
+*** Eglot
+
+Eglot was straightforward to configure. I tested it with Intelephense, and it worked flawlessly.
+
+However, I was disappointed to learn that using multiple language servers in the same buffer requires an LSP multiplexing solution.
+
+That feels like a significant deviation from the behavior of many other editors, and it adds complexity that I don't particularly want to manage.
+
+I am aware of =lsp-mode=, but it seems heavier than what I am looking for.
+
+As it stands, Emacs has a solid built-in LSP client, but its limitations prevent me from comfortably using it as my daily driver.
+
+*** Tree-sitter
+
+The current Tree-sitter experience is not good.
+
+I understand that it is still a relatively new feature and that many major modes do not support it properly yet. I have also seen that Emacs 31 is expected to improve the situation.
+
+However, in Emacs 30.2, it does not feel particularly usable for my setup. It requires too much boilerplate, and I don't want to spend time maintaining that configuration.
+
+I have high hopes that Tree-sitter will eventually improve the code-navigation issues I mentioned earlier by allowing structural navigation based directly on syntax-tree nodes.
+
+** Packages I Used
+
+I would also like to mention the packages I used while configuring Emacs, in case anyone else is going through a similar journey.
+
+*** Doom Themes
+
+[[https://github.com/doomemacs/themes][Doom Themes]]
+
+There is not much to say here. I used the =doom-gruvbox= theme, and it looks great.
+
+*** Reformatter
+
+[[https://github.com/purcell/emacs-reformatter][Reformatter]]
+
+This is a lightweight and straightforward package for configuring code formatters.
+
+I used it to set up:
+
+* =php-cs-fixer=
+* =nixfmt=
+* =xmlstarlet=
+
+It worked very well.
+
+*** inhibit-mouse
+
+[[https://github.com/jamescherti/inhibit-mouse.el][inhibit-mouse]]
+
+I wanted to force myself to use the keyboard, so I installed this package to disable mouse input.
+
+It worked well, although I was surprised that Emacs does not appear to provide this as a simple built-in option.
+
+*** direnv
+
+[[https://github.com/wbolster/emacs-direnv][emacs-direnv]]
+
+I use Nix and direnv to manage my development environments and environment variables, so this package was essential for me.
+
+It worked very well and integrated seamlessly with =project.el=.
+
+*** Ghostel
+
+[[https://github.com/dakra/ghostel][Ghostel]]
+
+This is a great package.
+
+I almost gave up on finding a good terminal emulator embedded inside Emacs, but then I discovered Ghostel. It works extremely well and feels very fast.
+
+It was probably the MVP of all the packages I tested.
+
+*** Git Gutter and Magit
+
+[[https://github.com/emacsorphanage/git-gutter][Git Gutter]] and [[https://github.com/magit/magit][Magit]]
+
+Git Gutter is a great package for viewing and interacting with Git hunks directly inside a buffer.
+
+Magit probably does not need an introduction. Almost everyone already knows about it, and it is excellent.
+
+* Final Thoughts
+Overall, my month with Emacs was much more positive than I expected.
+I enjoyed many of its built-in tools, and the general extensibility of the editor.
+However, code navigation, structural text editing, Tree-sitter support, and Eglot's limitations are still significant issues for me.
+For now, I don't think Emacs will replace Neovim as my daily driver, but I will continue following its development, especially the improvements coming in Emacs 31.
+
+I'm curious to hear how other Vim or Neovim users handled these issues when transitioning to Emacs.

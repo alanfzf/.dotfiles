@@ -9,7 +9,7 @@
   ;; useful modes
   (electric-pair-mode 1)
   (editorconfig-mode 1)
-  (global-auto-revert-mode t)
+  (global-auto-revert-mode 1)
   (global-whitespace-mode 1)
   ;; fonts
   (set-face-attribute 'default nil
@@ -67,6 +67,7 @@
   (enable-recursive-minibuffers t)
   (sentence-end-double-space nil)
   (help-window-select t)
+  (completion-auto-select t)
 
   :config
   ;; custom file
