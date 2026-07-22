@@ -32,5 +32,10 @@
         KERNEL=="hidraw*", SUBSYSTEM=="hidraw", TAG+="uaccess", MODE="0666"
       '';
     };
+
+    programs.fuse = {
+      enable = true;
+      userAllowOther = true;
+    };
   };
 }
