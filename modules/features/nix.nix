@@ -1,6 +1,8 @@
 {
   flake.nixosModules.nix = { ... }: {
     # system.stateVersion = "25.11";
+    nixpkgs.config.allowUnfree = true;
+
     nix.gc = {
       automatic = true;
       dates = "09:30";
