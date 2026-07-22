@@ -6,10 +6,10 @@
       bruno
       obs-studio
       # android development
-      # android-studio
-      # android-tools
+      android-studio
+      android-tools
       # database
-      # jetbrains.datagrip
+      jetbrains.datagrip
       rustdesk-flutter
     ];
   };
