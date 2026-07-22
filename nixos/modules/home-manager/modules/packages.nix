@@ -14,12 +14,6 @@ let
 in
 {
   home.packages = with pkgs; [
-    (aspellWithDicts (
-      dicts: with dicts; [
-        en
-        es
-      ]
-    ))
     mariadb.client
     pinentry-curses
     neovim

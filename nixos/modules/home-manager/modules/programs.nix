@@ -101,7 +101,7 @@
   programs.starship.enable = true;
   programs.zoxide.enable = true;
   programs.delta.enable = true;
-  programs.emacs.enable = true;
+  programs.emacs.enable = false;
   programs.rclone = {
     enable = true;
     remotes = {
@@ -123,7 +123,6 @@
         };
 
       };
-
     };
   };
 }
