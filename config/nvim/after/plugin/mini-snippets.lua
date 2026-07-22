@@ -14,4 +14,4 @@ mini_snippets.setup({
 })
 
 -- so default auto complete catches it
-mini_snippets.start_lsp_server()
+-- mini_snippets.start_lsp_server()

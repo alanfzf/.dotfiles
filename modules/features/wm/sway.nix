@@ -1,0 +1,45 @@
+{
+  flake.nixosModules.sway = { pkgs, ... }: {
+    preferences.greetd.command = "${pkgs.sway}/bin/sway";
+
+    programs.sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+      extraPackages = with pkgs; [
+        playerctl
+        brightnessctl
+        foot
+        grim
+        libnotify
+        mako
+        slurp
+        swaybg
+        swaylock
+        waypaper
+        wdisplays
+        wl-clipboard
+        ristretto
+        sway-contrib.grimshot
+        satty
+      ];
+    };
+
+    xdg.portal = {
+      enable = true;
+      wlr = {
+        enable = true;
+        settings = {
+          screencast = {
+            chooser_type = "simple";
+            chooser_cmd = "${pkgs.slurp}/bin/slurp -f 'Monitor: %o' -or";
+          };
+        };
+      };
+      config = {
+        common = {
+          default = [ "wlr" ];
+        };
+      };
+    };
+  };
+}
