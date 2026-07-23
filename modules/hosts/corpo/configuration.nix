@@ -20,6 +20,7 @@
       self.nixosModules.tailscale
       self.nixosModules.thunar
       self.nixosModules.users
+      self.nixosModules.home-manager
     ];
   };
 }
