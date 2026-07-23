@@ -19,6 +19,5 @@
       };
 
       programs.zsh.enable = true;
-      # networking.hostName = hostName;
     };
 }

@@ -1,8 +1,6 @@
 { self, inputs, ... }: {
   flake.nixosConfigurations.corpo = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      # inputs.nixosModules.home-manager
-      inputs.home-manager.nixosModules.home-manager
       self.nixosModules.corpohardware-configuration
       self.nixosModules.base
       self.nixosModules.sway
