@@ -3,7 +3,7 @@ set $mod Mod4
 set $term foot
 set $browser firefox
 set $kill_menu swaymsg '[app_id="app_launcher"] kill'
-set $menu $term -a=app_launcher -e launcher
+set $menu $term -a=app_launcher -e app-launcher
 set $left h
 set $down j
 set $up k

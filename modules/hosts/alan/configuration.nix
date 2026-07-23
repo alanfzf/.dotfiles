@@ -1,7 +1,8 @@
-{ self, inputs, ... }: {
-  flake.nixosConfigurations.corpo = inputs.nixpkgs.lib.nixosSystem {
+{ self, inputs, ... }:
+{
+  flake.nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
     modules = [
-      self.nixosModules.corpohardware-configuration
+      self.nixosModules.alan-hardware
       self.nixosModules.base
       self.nixosModules.sway
       self.nixosModules.bluetooth
