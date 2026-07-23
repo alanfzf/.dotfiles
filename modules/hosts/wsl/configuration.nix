@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosConfigurations.corpo = inputs.nixpkgs.lib.nixosSystem {
+  flake.nixosConfigurations.wpc = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.base
       self.nixosModules.docker
