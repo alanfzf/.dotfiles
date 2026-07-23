@@ -1,4 +1,5 @@
-{ self, inputs, ... }: {
+{ self, inputs, ... }:
+{
   flake.nixosConfigurations.wpc = inputs.nixpkgs.lib.nixosSystem {
     modules = [
       self.nixosModules.base

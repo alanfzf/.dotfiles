@@ -1,6 +1,9 @@
-{
+{ inputs, ... }: {
   flake.nixosModules.nix = { ... }: {
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.overlays = [
+      inputs.neovim-nightly-overlay.overlays.default
+    ];
 
     nix.gc = {
       automatic = true;
