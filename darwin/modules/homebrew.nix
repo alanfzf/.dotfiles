@@ -4,7 +4,7 @@
     enable = true;
     casks = [ ];
     brews = [ ];
-    masApps = [ ];
+    masApps = { };
     onActivation = {
       cleanup = "zap";
     };

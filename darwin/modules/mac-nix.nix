@@ -1,9 +1,13 @@
 {
+  nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
   nix = {
     gc = {
       automatic = true;
-      dates = "09:30";
+      interval = {
+        Hour = 9;
+        Minute = 30;
+      };
       options = "--delete-older-than 7d";
     };
     settings = {

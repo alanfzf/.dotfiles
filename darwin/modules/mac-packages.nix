@@ -7,3 +7,4 @@
     pkgs.docker
     pkgs.docker-compose
   ];
+}
