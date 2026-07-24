@@ -59,6 +59,7 @@
         mariadb.client
         pinentry-curses
         neovim
+        mpls
         git
         tmux
         lazygit

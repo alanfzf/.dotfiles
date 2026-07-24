@@ -30,6 +30,8 @@
   cmd = nvim -d "$LOCAL" "$REMOTE"
 [log]
   date = format:%Y-%m-%d %H:%M:%S %z
+[credential]
+  helper =
 [alias]
   subup = submodule update --init --recursive
   co = checkout

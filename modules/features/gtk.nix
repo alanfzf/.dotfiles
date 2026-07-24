@@ -6,24 +6,16 @@
       ...
     }:
     let
-      theme-name = "Gruvbox-Green-Dark-Medium";
-      theme-package = pkgs.gruvbox-gtk-theme.override {
-        colorVariants = [ "dark" ];
-        sizeVariants = [ "standard" ];
-        themeVariants = [ "green" ];
-        tweakVariants = [
-          "medium"
-          "macos"
-        ];
-      };
-
-      icon-theme-package = pkgs.tela-icon-theme;
-      icon-theme-name = "Tela";
+      theme-name = "Adwaita";
+      theme-package = pkgs.gnome-themes-extra;
+      icon-theme-package = pkgs.adwaita-icon-theme;
+      icon-theme-name = "Adwaita";
 
       gtksettings = ''
         [Settings]
         gtk-icon-theme-name = ${icon-theme-name}
-        gtk-theme-name = ${theme-name}
+        # gtk-theme-name = ${theme-name}
+        gtk-application-prefer-dark-theme=true
       '';
     in
     {

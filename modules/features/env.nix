@@ -16,6 +16,7 @@
         # below are optionals
         bruno
         obs-studio
+        vlc
         # android development
         android-studio
         android-tools
