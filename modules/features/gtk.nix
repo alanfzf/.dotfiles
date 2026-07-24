@@ -6,7 +6,7 @@
       ...
     }:
     let
-      theme-name = "Adwaita";
+      theme-name = "Adwaita-dark";
       theme-package = pkgs.gnome-themes-extra;
       icon-theme-package = pkgs.adwaita-icon-theme;
       icon-theme-name = "Adwaita";
@@ -14,7 +14,7 @@
       gtksettings = ''
         [Settings]
         gtk-icon-theme-name = ${icon-theme-name}
-        # gtk-theme-name = ${theme-name}
+        gtk-theme-name = ${theme-name}
         gtk-application-prefer-dark-theme=true
       '';
     in
