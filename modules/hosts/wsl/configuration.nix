@@ -2,6 +2,7 @@
 {
   flake.nixosConfigurations.wpc = inputs.nixpkgs.lib.nixosSystem {
     modules = [
+      inputs.nixos-wsl.nixosModules.default
       self.nixosModules.base
       self.nixosModules.docker
       self.nixosModules.locale
