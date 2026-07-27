@@ -32,6 +32,7 @@ vim.o.autocompletedelay = 300
 vim.opt.laststatus = 3
 vim.opt.mouse = ""
 vim.opt.winborder = "rounded"
+vim.opt.pumborder = "rounded"
 -- backup related
 vim.opt.backup = false
 vim.opt.writebackup = false
