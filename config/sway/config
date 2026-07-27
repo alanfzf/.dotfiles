@@ -134,7 +134,7 @@ client.background       $black
 bar {
     position top
     status_command ~/.config/sway/bar.sh
-    font pango:'JetBrainsMono Nerd Font':monospace 12
+    font pango:JetBrainsMono Nerd Font 12
     colors {
         statusline $white
         background $black
