@@ -5,9 +5,11 @@
       pkgs,
       lib,
       config,
+      osConfig,
       ...
     }:
     let
+      user = osConfig.preferences.user.name;
       dotfiles = [
         "config/sway"
         "config/nvim"
@@ -28,12 +30,11 @@
     {
 
       home = {
-        username = "alan";
-        homeDirectory = "/home/alan";
+        username = user;
+        homeDirectory = if pkgs.stdenv.isDarwin then "/Users/${user}" else "/home/${user}";
         stateVersion = "25.11";
       };
 
-      # home.homeDirectory = (if isLinux then "/home/${myUser}" else "/Users/${myUser}");
       home.shellAliases = {
         vi = "$(which nvim)";
         ls = "eza -l --icons -s name --group-directories-first";
@@ -190,12 +191,12 @@
               user = "admin";
               pass = "***REMOVED***";
             };
-            mounts."" = {
-              enable = true;
-              autoMount = true;
-              mountPoint = "${config.home.homeDirectory}/WebDAV";
-              options = {
-                vfs-cache-mode = "full";
+            mounts = lib.mkIf pkgs.stdenv.isLinux {
+              "" = {
+                enable = true;
+                autoMount = true;
+                mountPoint = "${config.home.homeDirectory}/WebDAV";
+                options.vfs-cache-mode = "full";
               };
             };
 
@@ -205,7 +206,7 @@
 
       # gpg
       programs.gpg.enable = true;
-      services.gpg-agent = {
+      services.gpg-agent = lib.mkIf pkgs.stdenv.isLinux {
         enable = true;
         pinentry.package = pkgs.pinentry-curses;
         enableSshSupport = true;

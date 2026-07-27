@@ -17,6 +17,7 @@
         bruno
         obs-studio
         vlc
+        onlyoffice-desktopeditors
         # android development
         android-studio
         android-tools
