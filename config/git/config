@@ -32,6 +32,14 @@
   date = format:%Y-%m-%d %H:%M:%S %z
 [credential]
   helper =
+[delta]
+  file-decoration-style = "#666666" ul
+  file-style = "#666666"
+  hunk-header-decoration-style = "#666666" box
+  hunk-header-line-number-style = "#666666"
+  hunk-header-style = line-number syntax
+  line-numbers-left-style = "#666666"
+  line-numbers-right-style = "#666666"
 [alias]
   subup = submodule update --init --recursive
   co = checkout
