@@ -4,6 +4,7 @@
       enable = true;
       preferences = {
         "general.autoScroll" = true;
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
       };
     };
   };

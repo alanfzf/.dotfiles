@@ -31,10 +31,9 @@
       };
 
       programs.dconf = {
-        enable = lib.mkDefault true;
+        enable = true;
         profiles.user.databases = [
           {
-            lockAll = false;
             settings = {
               "org/gnome/desktop/interface" = {
                 gtk-theme = theme-name;
