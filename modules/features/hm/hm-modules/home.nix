@@ -58,7 +58,7 @@
       # home packages
       home.packages = with pkgs; [
         mariadb.client
-        pinentry-curses
+        pinentry-tty
         neovim
         mpls
         git
@@ -208,7 +208,7 @@
       programs.gpg.enable = true;
       services.gpg-agent = lib.mkIf pkgs.stdenv.isLinux {
         enable = true;
-        pinentry.package = pkgs.pinentry-curses;
+        pinentry.package = pkgs.pinentry-tty;
         enableSshSupport = true;
       };
     };
