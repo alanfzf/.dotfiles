@@ -46,7 +46,6 @@
       home.sessionVariables = {
         EDITOR = "$(which nvim)";
         VISUAL = "$(which nvim)";
-        SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
       };
 
       # here is symlinks
@@ -208,7 +207,7 @@
 
       # gpg
       programs.gpg.enable = true;
-      services.gpg-agent = lib.mkIf pkgs.stdenv.isLinux {
+      services.gpg-agent = {
         enable = true;
         pinentry.package = pkgs.pinentry-tty;
         enableSshSupport = true;
