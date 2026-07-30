@@ -198,9 +198,10 @@
                 autoMount = true;
                 mountPoint = "${config.home.homeDirectory}/WebDAV";
                 options = {
-                  vfs-cache-mode = "full";
-                  vfs-write-back = "5s";
-                  dir-cache-time = "30s";
+                  vfs-cache-mode = "off";
+                  # vfs-cache-mode = "full";
+                  # vfs-write-back = "5s";
+                  # dir-cache-time = "5m";
                 };
               };
             };
