@@ -1,6 +1,9 @@
 {
   flake.darwinModules.nix = {
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.overlays = [
+      inputs.neovim-nightly-overlay.overlays.default
+    ];
     nixpkgs.hostPlatform = "aarch64-darwin";
 
     nix = {
