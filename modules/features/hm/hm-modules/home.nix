@@ -190,14 +190,18 @@
               url = "https://my-webdav.fly.dev";
               vendor = "other";
               user = "admin";
-              pass = "***REMOVED***";
             };
+            secrets.pass = "${config.home.homeDirectory}/.config/secrets/webdav-pass";
             mounts = lib.mkIf pkgs.stdenv.isLinux {
               "" = {
                 enable = true;
                 autoMount = true;
                 mountPoint = "${config.home.homeDirectory}/WebDAV";
-                options.vfs-cache-mode = "full";
+                options = {
+                  vfs-cache-mode = "full";
+                  vfs-write-back = "5s";
+                  dir-cache-time = "30s";
+                };
               };
             };
 
