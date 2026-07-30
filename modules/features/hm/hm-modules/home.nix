@@ -25,6 +25,7 @@
         "config/starship.toml"
         "config/emacs"
         "config/opencode"
+        "config/alacritty"
       ];
     in
     {
@@ -45,6 +46,7 @@
       home.sessionVariables = {
         EDITOR = "$(which nvim)";
         VISUAL = "$(which nvim)";
+        SSH_AUTH_SOCK = "$(gpgconf --list-dirs agent-ssh-socket)";
       };
 
       # here is symlinks

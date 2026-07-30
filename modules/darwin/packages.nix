@@ -3,6 +3,7 @@
     { pkgs, ... }:
     {
       environment.systemPackages = with pkgs; [
+        firefox
         alacritty
         jetbrains.datagrip
         colima
