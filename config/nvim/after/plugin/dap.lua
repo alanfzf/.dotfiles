@@ -16,5 +16,10 @@ dap.configurations.php = {
     request = "launch",
     port = "9003",
     hostname = "0.0.0.0",
+    xdebugSettings = {
+      max_children = 999,
+      max_depth = 10,
+      max_data = 10240,
+    },
   },
 }

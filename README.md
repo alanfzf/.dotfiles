@@ -1,11 +1,5 @@
 # Dot files
 
-## Linux setup
-
-```bash
-bash <(curl -s https://alanfzf.github.io/dotfiles/scripts/linux.sh)
-```
-
 ## Windows Setup
 
 ```powershell
