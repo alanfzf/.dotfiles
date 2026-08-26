@@ -56,5 +56,6 @@
       hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
       networking.hostName = "nixos";
+      system.stateVersion = "26.11";
     };
 }

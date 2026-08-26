@@ -3,7 +3,6 @@
     { pkgs, config, ... }:
     let
       user = config.preferences.user.name;
-      hostName = config.preferences.host.name;
     in
     {
       users.mutableUsers = false;

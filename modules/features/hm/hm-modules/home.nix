@@ -32,7 +32,7 @@
 
       home = {
         username = user;
-        homeDirectory = if pkgs.stdenv.isDarwin then "/Users/${user}" else "/home/${user}";
+        homeDirectory = if pkgs.stdenv.hostPlatform.isDarwin then "/Users/${user}" else "/home/${user}";
         stateVersion = "25.11";
       };
 
@@ -58,25 +58,24 @@
 
       # home packages
       home.packages = with pkgs; [
-        mariadb.client
-        pinentry-tty
-        neovim
-        mpls
-        git
-        tmux
-        lazygit
         copilot-language-server
-        opencode
         gcc
+        git
+        lazygit
         lua-language-server
+        mariadb.client
+        mpls
+        neovim
         nerd-fonts.jetbrains-mono
-        nerd-fonts.iosevka
         nixfmt
+        opencode
+        pinentry-tty
         stylua
+        tmux
         tree-sitter
         unzip
-        zip
         xmlstarlet
+        zip
       ];
 
       # home-programs
@@ -161,8 +160,13 @@
             user = "git";
           };
           "corpo" = {
-            hostname = "172.31.89.33";
-            user = "ubuntu";
+            hostname = "172.31.40.160";
+            user = "admin";
+            identityFile = "~/.ssh/id_ed25519";
+          };
+          "corpo-db" = {
+            hostname = "172.31.92.86";
+            user = "admin";
             identityFile = "~/.ssh/id_ed25519";
           };
         };
@@ -192,16 +196,16 @@
               user = "admin";
             };
             secrets.pass = "${config.home.homeDirectory}/.config/secrets/webdav-pass";
-            mounts = lib.mkIf pkgs.stdenv.isLinux {
+            mounts = {
               "" = {
                 enable = true;
                 autoMount = true;
                 mountPoint = "${config.home.homeDirectory}/WebDAV";
                 options = {
-                  vfs-cache-mode = "off";
-                  # vfs-cache-mode = "full";
-                  # vfs-write-back = "5s";
-                  # dir-cache-time = "5m";
+                  # vfs-cache-mode = "off";
+                  vfs-cache-mode = "full";
+                  vfs-write-back = "5s";
+                  dir-cache-time = "5m";
                 };
               };
             };

@@ -48,6 +48,8 @@
 
       nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
       hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
       networking.hostName = "corpo";
+      system.stateVersion = "26.11";
     };
 }
