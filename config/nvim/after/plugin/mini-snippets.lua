@@ -11,6 +11,12 @@ mini_snippets.setup({
     -- `snippets/` subdirectories from 'runtimepath' directories.
     gen_loader.from_lang(),
   },
+  mappings = {
+    expand = "<M-j>",
+    jump_next = "<M-l>",
+    jump_prev = "<M-h>",
+    stop = "<C-c>",
+  },
 })
 
 -- so default auto complete catches it
