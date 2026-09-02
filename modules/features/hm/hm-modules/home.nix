@@ -185,34 +185,6 @@
       programs.zoxide.enable = true;
       programs.delta.enable = true;
       programs.emacs.enable = false;
-      programs.rclone = {
-        enable = true;
-        remotes = {
-          webdav = {
-            config = {
-              type = "webdav";
-              url = "https://my-webdav.fly.dev";
-              vendor = "other";
-              user = "admin";
-            };
-            secrets.pass = "${config.home.homeDirectory}/.config/secrets/webdav-pass";
-            mounts = {
-              "" = {
-                enable = true;
-                autoMount = true;
-                mountPoint = "${config.home.homeDirectory}/WebDAV";
-                options = {
-                  # vfs-cache-mode = "off";
-                  vfs-cache-mode = "full";
-                  vfs-write-back = "5s";
-                  dir-cache-time = "5m";
-                };
-              };
-            };
-
-          };
-        };
-      };
 
       # gpg
       programs.gpg.enable = true;
