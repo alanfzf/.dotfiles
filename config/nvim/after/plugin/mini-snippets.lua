@@ -15,7 +15,7 @@ mini_snippets.setup({
     expand = "<M-j>",
     jump_next = "<M-l>",
     jump_prev = "<M-h>",
-    stop = "<C-c>",
+    stop = "<A-c>",
   },
 })
 
