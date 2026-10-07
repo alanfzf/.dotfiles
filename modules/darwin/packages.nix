@@ -9,7 +9,8 @@
         colima
         docker
         docker-compose
-        tailscale
       ];
+
+      services.tailscale.enable = true;
     };
 }
