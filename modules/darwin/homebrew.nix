@@ -2,9 +2,14 @@
   flake.darwinModules.homebrew = {
     homebrew = {
       enable = true;
-      casks = [ ];
-      brews = [ ];
-      masApps = { };
+      casks = [
+        "spotify"
+        "vlc"
+      ];
+      brews = [
+      ];
+      masApps = {
+      };
       onActivation.cleanup = "zap";
     };
   };

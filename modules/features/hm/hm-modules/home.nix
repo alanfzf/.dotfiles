@@ -162,12 +162,10 @@
           "corpo" = {
             hostname = "172.31.40.160";
             user = "admin";
-            identityFile = "~/.ssh/id_ed25519";
           };
           "corpo-db" = {
             hostname = "172.31.92.86";
             user = "admin";
-            identityFile = "~/.ssh/id_ed25519";
           };
         };
       };
