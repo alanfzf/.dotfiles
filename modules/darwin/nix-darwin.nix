@@ -8,8 +8,11 @@
 
     nix.gc = {
       automatic = true;
-      # interval = "09:30";
-      # options = "--delete-older-than 7d";
+      interval = {
+        Hour = 9;
+        Minute = 30;
+      };
+      options = "--delete-older-than 7d";
     };
 
     nix.settings = {

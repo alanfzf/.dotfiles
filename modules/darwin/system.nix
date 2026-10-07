@@ -17,7 +17,7 @@
         AppleShowScrollBars = "Always";
         NSAutomaticWindowAnimationsEnabled = false;
         NSDocumentSaveNewDocumentsToCloud = false;
-        KeyRepeat = 12;
+        KeyRepeat = 5;
         InitialKeyRepeat = 15;
       };
 
