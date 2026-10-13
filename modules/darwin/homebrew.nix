@@ -5,6 +5,8 @@
       casks = [
         "spotify"
         "vlc"
+        "rustdesk"
+        "onlyoffice"
       ];
       brews = [
       ];
