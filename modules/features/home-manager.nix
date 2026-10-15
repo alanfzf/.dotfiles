@@ -1,9 +1,7 @@
 { inputs, self, ... }:
-{
-  flake.darwinModules.home-manager = { config, ... }: {
-    imports = [
-      inputs.home-manager.darwinModules.home-manager
-    ];
+let
+  mkHomeManager = hmModule: { config, ... }: {
+    imports = [ hmModule ];
 
     home-manager = {
       useGlobalPkgs = true;
@@ -16,4 +14,8 @@
       ];
     };
   };
+in
+{
+  flake.nixosModules.home-manager = mkHomeManager inputs.home-manager.nixosModules.home-manager;
+  flake.darwinModules.home-manager = mkHomeManager inputs.home-manager.darwinModules.home-manager;
 }

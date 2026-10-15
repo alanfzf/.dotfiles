@@ -18,9 +18,6 @@
         obs-studio
         vlc
         onlyoffice-desktopeditors
-        # android development
-        android-studio
-        android-tools
         # database
         jetbrains.datagrip
         rustdesk-flutter

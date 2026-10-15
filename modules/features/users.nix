@@ -1,6 +1,16 @@
-{
-  flake.nixosModules.users =
-    { pkgs, config, ... }:
+let
+  darwinUser =
+    { config, ... }:
+    let
+      user = config.preferences.user.name;
+    in
+    {
+      users.users.${user}.home = "/Users/${user}";
+      system.primaryUser = user;
+    };
+
+  linuxUser =
+    { config, pkgs, ... }:
     let
       user = config.preferences.user.name;
     in
@@ -19,4 +29,8 @@
 
       programs.zsh.enable = true;
     };
+in
+{
+  flake.nixosModules.users = linuxUser;
+  flake.darwinModules.users = darwinUser;
 }

@@ -1,8 +1,6 @@
 { inputs, ... }:
 {
   flake.darwinModules.system = {
-    system.stateVersion = 5;
-    system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 
     system.keyboard = {
       enableKeyMapping = true;

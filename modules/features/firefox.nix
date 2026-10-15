@@ -1,5 +1,11 @@
-{
-  flake.nixosModules.firefox = { ... }: {
+let
+  darwinFirefox = { pkgs, ... }: {
+    environment.systemPackages = with pkgs; [
+      firefox
+    ];
+  };
+
+  nixFirefox = { ... }: {
     programs.firefox = {
       enable = true;
       preferences = {
@@ -8,4 +14,9 @@
       };
     };
   };
+
+in
+{
+  flake.nixosModules.firefox = nixFirefox;
+  flake.darwinModules.firefox = darwinFirefox;
 }

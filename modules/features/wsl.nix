@@ -1,6 +1,5 @@
 {
   flake.nixosModules.wsl = { pkgs, config, ... }: {
-    nixpkgs.hostPlatform = "x86_64-linux";
     wsl.enable = true;
     wsl.defaultUser = config.preferences.user.name;
     wsl.startMenuLaunchers = true;

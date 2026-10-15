@@ -9,6 +9,7 @@
       self.nixosModules.nix
       self.nixosModules.users
       self.nixosModules.wsl
+      self.nixosModules.wsl-hardware
       self.nixosModules.home-manager
     ];
   };
