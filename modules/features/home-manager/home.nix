@@ -159,14 +159,6 @@
             hostname = "github.com";
             user = "git";
           };
-          "corpo" = {
-            hostname = "172.31.40.160";
-            user = "admin";
-          };
-          "corpo-db" = {
-            hostname = "172.31.92.86";
-            user = "admin";
-          };
         };
       };
 
@@ -178,7 +170,6 @@
       programs.fzf.enable = true;
       programs.gh.enable = true;
       programs.jq.enable = true;
-      programs.password-store.enable = true;
       programs.starship.enable = true;
       programs.zoxide.enable = true;
       programs.delta.enable = true;
