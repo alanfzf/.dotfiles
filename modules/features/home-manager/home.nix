@@ -69,13 +69,13 @@
         nerd-fonts.jetbrains-mono
         nixfmt
         opencode
-        pinentry-tty
         stylua
         tmux
         tree-sitter
         unzip
         xmlstarlet
         zip
+        bitwarden-cli
       ];
 
       # home-programs
@@ -175,10 +175,13 @@
       programs.delta.enable = true;
       programs.emacs.enable = false;
 
+      # ssh
+      services.ssh-agent.enable = true;
+
       # gpg
-      programs.gpg.enable = true;
+      programs.gpg.enable = false;
       services.gpg-agent = {
-        enable = true;
+        enable = false;
         pinentry.package = pkgs.pinentry-tty;
         enableSshSupport = true;
       };
