@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/v2/cli.json",
+  "mouse": false,
+  "theme": {
+    "name": "opencode"
+  },
+  "scroll": {
+    "acceleration": true
+  },
+  "keybinds": {
+    "session.line.down": "ctrl+n",
+    "session.line.up": "ctrl+p"
+  }
+}
