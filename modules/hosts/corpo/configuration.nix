@@ -21,7 +21,6 @@
       self.nixosModules.home-manager
       self.nixosModules.gtk
       self.nixosModules.eyecare
-      self.nixosModules.webdav
     ];
   };
 }

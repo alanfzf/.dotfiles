@@ -3,7 +3,7 @@
     programs.thunar.enable = true;
     # to see thumbnails
     services.tumbler.enable = true;
-    # so we can connect other filesystems like (ftp, webdav and such)
+    # so we can connect other filesystems like (ftp and such)
     services.gvfs.enable = true;
   };
 }

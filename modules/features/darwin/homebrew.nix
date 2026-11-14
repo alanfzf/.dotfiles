@@ -3,7 +3,6 @@
     homebrew = {
       enable = true;
       casks = [
-        "cloudmounter"
         "spotify"
         "vlc"
         "rustdesk"
